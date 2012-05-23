@@ -249,3 +249,18 @@
   #   * Verify video opens correctly in web browser
 
 -----
+
+# Test case objectives:
+  #  * Ensure files inside folders with greek names open correctly
+  # Pre-conditions
+  #   * Have a folder with greek characters like Παράδειγμα
+  #   * Have a file called THIS_IS_A_TEST_FOR_GREEK_CHARS inside that folder
+  #   * Open that file from nautilus so it will show up in the files dash
+  # Test steps
+  #   * Open Dash
+  #   * Go to the files dash
+  #   * Type THIS_IS_A_TEST_FOR_GREEK_CHARS
+  #   * Open the file from the dash
+  #   * Verify the file really opens
+
+-----
