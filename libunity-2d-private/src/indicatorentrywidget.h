@@ -63,6 +63,8 @@ public:
 
     bool activatedByThisEntry() const;
 
+    bool isSensitive() const;
+
 Q_SIGNALS:
     void isEmptyChanged();
 

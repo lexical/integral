@@ -164,7 +164,7 @@ void IndicatorsManager::checkMousePosition()
     qApp->x11ProcessEvent(reinterpret_cast<XEvent*>(&event));
 
     IndicatorEntryWidget* entryWidget = qobject_cast<IndicatorEntryWidget*>(widget);
-    if (!entryWidget) {
+    if (!entryWidget || !entryWidget->isSensitive()) {
         return;
     }
     entryWidget->showMenu(Qt::NoButton);
