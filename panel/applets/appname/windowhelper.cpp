@@ -213,7 +213,7 @@ void WindowHelper::unmaximize()
 {
     if (DashClient::instance()->activeInScreen(d->screen())) {
         dash2dConfiguration().setProperty("fullScreen", QVariant(false));
-    } else {
+    } else if (isMostlyOnScreen(d->screen())) {
         wnck_window_unmaximize(d->m_window);
     }
 }
@@ -229,24 +229,26 @@ void WindowHelper::toggleMaximize()
 
 void WindowHelper::drag(const QPoint& pos)
 {
-    // this code IMO should ultimately belong to wnck
-    if (wnck_window_is_maximized(d->m_window)) {
-        XEvent xev;
-        QX11Info info;
-        Atom netMoveResize = XInternAtom(QX11Info::display(), "_NET_WM_MOVERESIZE", false);
-        xev.xclient.type = ClientMessage;
-        xev.xclient.message_type = netMoveResize;
-        xev.xclient.display = QX11Info::display();
-        xev.xclient.window = wnck_window_get_xid(d->m_window);
-        xev.xclient.format = 32;
-        xev.xclient.data.l[0] = pos.x();
-        xev.xclient.data.l[1] = pos.y();
-        xev.xclient.data.l[2] = 8; // _NET_WM_MOVERESIZE_MOVE
-        xev.xclient.data.l[3] = Button1;
-        xev.xclient.data.l[4] = 0;
-        XUngrabPointer(QX11Info::display(), QX11Info::appTime());
-        XSendEvent(QX11Info::display(), QX11Info::appRootWindow(info.screen()), false,
-                   SubstructureRedirectMask | SubstructureNotifyMask, &xev);
+    if (isMostlyOnScreen(d->screen())) {
+        // this code IMO should ultimately belong to wnck
+        if (wnck_window_is_maximized(d->m_window)) {
+            XEvent xev;
+            QX11Info info;
+            Atom netMoveResize = XInternAtom(QX11Info::display(), "_NET_WM_MOVERESIZE", false);
+            xev.xclient.type = ClientMessage;
+            xev.xclient.message_type = netMoveResize;
+            xev.xclient.display = QX11Info::display();
+            xev.xclient.window = wnck_window_get_xid(d->m_window);
+            xev.xclient.format = 32;
+            xev.xclient.data.l[0] = pos.x();
+            xev.xclient.data.l[1] = pos.y();
+            xev.xclient.data.l[2] = 8; // _NET_WM_MOVERESIZE_MOVE
+            xev.xclient.data.l[3] = Button1;
+            xev.xclient.data.l[4] = 0;
+            XUngrabPointer(QX11Info::display(), QX11Info::appTime());
+            XSendEvent(QX11Info::display(), QX11Info::appRootWindow(info.screen()), false,
+                    SubstructureRedirectMask | SubstructureNotifyMask, &xev);
+        }
     }
 }
 
