@@ -53,3 +53,7 @@
  * Go to the panel and double click the middle mouse button
  * Verify the fullscreen window stays maximized
 ----
+ * Compile simple test program from bug #850017
+ * Verify the Disabled menu can not be opened by clicking on it
+ * Verify the Disabled menu can not be opened by clicking on the Enabled menu and then moving the mouse over to the Disabled one
+----
