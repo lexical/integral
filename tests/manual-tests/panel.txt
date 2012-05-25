@@ -53,3 +53,13 @@
  * Go to the panel and double click the middle mouse button
  * Verify the fullscreen window stays maximized
 ----
+ * Have two monitors
+ * Maximize one window
+ * Double click the panel in the monitor that does not contain the window
+ * Verify the window stays maximized
+----
+* Have two monitors
+ * Maximize one window
+ * Press and drag the mouse in the panel in the monitor that does not contain the window
+ * Verify the window stays unaffected
+----
