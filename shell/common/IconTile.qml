@@ -70,6 +70,7 @@ Item {
 
         sourceSize.width: 48
         sourceSize.height: 48
+        cache: false
 
         /* Whenever one of the parameters used in calculating the background color of
            the icon changes, recalculate its value */

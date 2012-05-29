@@ -101,6 +101,7 @@ Q_SIGNALS:
     void dashActivateHome();
     void dashActivateLens(const QString& lensId);
     void toggleHud();
+    void iconThemeChanged();
 
 private Q_SLOTS:
     void onScreenCountChanged(int);
@@ -118,6 +119,8 @@ private Q_SLOTS:
     void onActiveWorkspaceChanged();
 
     void onHudActivationShortcutChanged();
+
+    void onIconThemeChanged();
 
 private:
     Q_DISABLE_COPY(ShellManager)
