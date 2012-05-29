@@ -185,6 +185,9 @@ void IndicatorsManager::onEntryActivateRequest(const std::string& entryId)
         UQ_WARNING << "Could not find a widget for IndicatorEntry with id" << QString::fromStdString(entryId);
         return;
     }
+    if (!widget->isSensitive()) {
+        return;
+    }
     widget->showMenu(Qt::NoButton);
 }
 
