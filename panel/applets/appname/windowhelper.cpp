@@ -30,6 +30,7 @@
 #include <hudclient.h>
 #include <debug_p.h>
 #include <gconnector.h>
+#include <unity2dpanel.h>
 
 // Bamf
 #include <bamf-matcher.h>
@@ -57,15 +58,20 @@ struct WindowHelperPrivate
 {
     WnckWindow* m_window;
     GConnector m_connector;
-    int m_screen;
+    Unity2dPanel *m_panel;
+
+    int screen() const
+    {
+        return m_panel->screen();
+    }
 };
 
-WindowHelper::WindowHelper(int screen, QObject* parent)
+WindowHelper::WindowHelper(Unity2dPanel *panel, QObject* parent)
 : QObject(parent)
 , d(new WindowHelperPrivate)
 {
     d->m_window = 0;
-    d->m_screen = screen;
+    d->m_panel = panel;
 
     wnck_screen_force_update(wnck_screen_get_default());
 
@@ -138,7 +144,7 @@ void WindowHelper::update()
 
 bool WindowHelper::isMaximized() const
 {
-    if (DashClient::instance()->activeInScreen(d->m_screen)) {
+    if (DashClient::instance()->activeInScreen(d->screen())) {
         return dash2dConfiguration().property("fullScreen").toBool();
     } else {
         if (d->m_window) {
@@ -172,11 +178,37 @@ bool WindowHelper::isMostlyOnScreen(int screen) const
     return true;
 }
 
+void WindowHelper::focusTopMostMaximizedWindowOnScreen() const
+{
+    WnckWindow *topMostMaximizedWindowOnScreen = NULL;
+    GList *stack = wnck_screen_get_windows_stacked(wnck_screen_get_default());
+    GList *cur = stack;
+    while (cur) {
+        WnckWindow *window = (WnckWindow*) cur->data;
+
+        if (window != NULL) {
+            if (wnck_window_is_maximized(window)) {
+                // Check the window screen
+                int x, y, width, height;
+                wnck_window_get_geometry(window, &x, &y, &width, &height);
+                if (QApplication::desktop()->screenNumber(QRect(x, y, width, height).center()) == d->screen()) {
+                    topMostMaximizedWindowOnScreen = window;
+                }
+            }
+        }
+        cur = g_list_next(cur);
+    }
+
+    if (topMostMaximizedWindowOnScreen) {
+        wnck_window_activate(topMostMaximizedWindowOnScreen, CurrentTime);
+    }
+}
+
 void WindowHelper::close()
 {
-    if (DashClient::instance()->activeInScreen(d->m_screen)) {
+    if (DashClient::instance()->activeInScreen(d->screen())) {
         DashClient::instance()->setActive(false);
-    } else if (HUDClient::instance()->activeInScreen(d->m_screen)) {
+    } else if (HUDClient::instance()->activeInScreen(d->screen())) {
         HUDClient::instance()->setActive(false);
     } else {
         guint32 timestamp = QDateTime::currentDateTime().toTime_t();
@@ -186,14 +218,14 @@ void WindowHelper::close()
 
 void WindowHelper::minimize()
 {
-    if (!DashClient::instance()->activeInScreen(d->m_screen)) {
+    if (!DashClient::instance()->activeInScreen(d->screen())) {
         wnck_window_minimize(d->m_window);
     }
 }
 
 void WindowHelper::maximize()
 {
-    if (DashClient::instance()->activeInScreen(d->m_screen)) {
+    if (DashClient::instance()->activeInScreen(d->screen())) {
         dash2dConfiguration().setProperty("fullScreen", QVariant(true));
     } else {
         /* This currently cannot happen, because the window buttons are not
@@ -205,9 +237,9 @@ void WindowHelper::maximize()
 
 void WindowHelper::unmaximize()
 {
-    if (DashClient::instance()->activeInScreen(d->m_screen)) {
+    if (DashClient::instance()->activeInScreen(d->screen())) {
         dash2dConfiguration().setProperty("fullScreen", QVariant(false));
-    } else {
+    } else if (isMostlyOnScreen(d->screen())) {
         wnck_window_unmaximize(d->m_window);
     }
 }
@@ -223,24 +255,26 @@ void WindowHelper::toggleMaximize()
 
 void WindowHelper::drag(const QPoint& pos)
 {
-    // this code IMO should ultimately belong to wnck
-    if (wnck_window_is_maximized(d->m_window)) {
-        XEvent xev;
-        QX11Info info;
-        Atom netMoveResize = XInternAtom(QX11Info::display(), "_NET_WM_MOVERESIZE", false);
-        xev.xclient.type = ClientMessage;
-        xev.xclient.message_type = netMoveResize;
-        xev.xclient.display = QX11Info::display();
-        xev.xclient.window = wnck_window_get_xid(d->m_window);
-        xev.xclient.format = 32;
-        xev.xclient.data.l[0] = pos.x();
-        xev.xclient.data.l[1] = pos.y();
-        xev.xclient.data.l[2] = 8; // _NET_WM_MOVERESIZE_MOVE
-        xev.xclient.data.l[3] = Button1;
-        xev.xclient.data.l[4] = 0;
-        XUngrabPointer(QX11Info::display(), QX11Info::appTime());
-        XSendEvent(QX11Info::display(), QX11Info::appRootWindow(info.screen()), false,
-                   SubstructureRedirectMask | SubstructureNotifyMask, &xev);
+    if (isMostlyOnScreen(d->screen())) {
+        // this code IMO should ultimately belong to wnck
+        if (wnck_window_is_maximized(d->m_window)) {
+            XEvent xev;
+            QX11Info info;
+            Atom netMoveResize = XInternAtom(QX11Info::display(), "_NET_WM_MOVERESIZE", false);
+            xev.xclient.type = ClientMessage;
+            xev.xclient.message_type = netMoveResize;
+            xev.xclient.display = QX11Info::display();
+            xev.xclient.window = wnck_window_get_xid(d->m_window);
+            xev.xclient.format = 32;
+            xev.xclient.data.l[0] = pos.x();
+            xev.xclient.data.l[1] = pos.y();
+            xev.xclient.data.l[2] = 8; // _NET_WM_MOVERESIZE_MOVE
+            xev.xclient.data.l[3] = Button1;
+            xev.xclient.data.l[4] = 0;
+            XUngrabPointer(QX11Info::display(), QX11Info::appTime());
+            XSendEvent(QX11Info::display(), QX11Info::appRootWindow(info.screen()), false,
+                    SubstructureRedirectMask | SubstructureNotifyMask, &xev);
+        }
     }
 }
 

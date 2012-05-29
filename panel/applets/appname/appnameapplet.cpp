@@ -253,7 +253,7 @@ struct AppNameAppletPrivate
 
     void setupWindowHelper()
     {
-        m_windowHelper = new WindowHelper(q->panel()->screen(), q);
+        m_windowHelper = new WindowHelper(q->panel(), q);
         QObject::connect(m_windowHelper, SIGNAL(stateChanged()),
             q, SLOT(updateWidgets()));
         QObject::connect(m_windowHelper, SIGNAL(nameChanged()),
@@ -400,6 +400,12 @@ void AppNameApplet::mouseDoubleClickEvent(QMouseEvent* event) {
 
 void AppNameApplet::mousePressEvent(QMouseEvent* event) {
     if (event->button() == Qt::LeftButton) {
+        if (!d->m_label->geometry().contains(event->pos()) || !d->m_label->isVisible()) {
+            // Clicked outside the label and outside the menus
+            // focus the top most maximized window
+            d->m_windowHelper->focusTopMostMaximizedWindowOnScreen();
+        }
+
         d->m_dragStartPosition = event->pos();
         d->m_dragInProgress = true;
     } else {
