@@ -33,6 +33,7 @@
 // libc
 #include <cstdio>
 #include <cstdlib>
+#include <unistd.h>
 
 namespace Unity2dDebug
 {
