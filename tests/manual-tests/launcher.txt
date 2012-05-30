@@ -190,3 +190,9 @@ Verify the launcher of that second monitor does not show if the program we start
 
 Verify there is no "Unity 2d Shell" tile in the launcher
 ----
+ * Open a terminal
+ * Open the system settings
+ * Change the icon theme from Ambience to High Constrast
+
+Verify the icon of the terminal is updated
+----
