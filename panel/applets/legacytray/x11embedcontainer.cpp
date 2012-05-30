@@ -225,6 +225,12 @@ void X11EmbedContainer::paintEvent(QPaintEvent *event)
         // size #2.
         XImage *ximage = XGetImage(dpy, pixmap, 0, 0, width(), height(), AllPlanes, ZPixmap);
         if (!ximage) {
+            // Make sure the attr are updated, Pidgin changes its widthxheight late in the game
+            if (!XGetWindowAttributes(QX11Info::display(), clientWinId(), &d->attr)) {
+                error(QX11EmbedContainer::Unknown);
+                return;
+            }
+
             int ximageWidth = qMin(d->attr.width, width());
             int ximageHeight = qMin(d->attr.height, height());
             ximage = XGetImage(dpy, pixmap, 0, 0, ximageWidth, ximageHeight, AllPlanes, ZPixmap);
