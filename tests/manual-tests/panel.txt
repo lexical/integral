@@ -81,3 +81,7 @@
  * Click in the panel (not in window label nor menus)
  * Verify focus goes to the maximized window
 ----
+ * Add 'pidgin' to /desktop/unity/panel/systray-whitelist in dconf-editor
+ * Start pidgin
+ * Verify the systray icon of pidgin appears in the panel
+----
