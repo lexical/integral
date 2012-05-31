@@ -53,6 +53,38 @@
  * Go to the panel and double click the middle mouse button
  * Verify the fullscreen window stays maximized
 ----
+ * Have two monitors
+ * Maximize one window
+ * Double click the panel in the monitor that does not contain the window
+ * Verify the window stays maximized
+----
+ * Have two monitors
+ * Maximize one window
+ * Press and drag the mouse in the panel in the monitor that does not contain the window
+ * Verify the window stays unaffected
+----
+ * Have two monitors
+ * Maximize one window in each monitor
+ * Give focus to windown in monitor 1
+ * Click in the panel of monitor 2 
+ * Verify the window from monitor 2 gets the focus
+----
+ * Have two monitors
+ * Maximize one window in each monitor
+ * Give focus to windown in monitor 1
+ * Press and drag the mouse in the panel of monitor 2 (has the window without focus)
+ * Verify the window from monitor 2 gets the focus and starts to be dragged
+----
+ * Have two windows in one monitor
+ * Maximize one window
+ * Give focus to unmaximized one
+ * Click in the panel (not in window label nor menus)
+ * Verify focus goes to the maximized window
+----
+ * Add 'pidgin' to /desktop/unity/panel/systray-whitelist in dconf-editor
+ * Start pidgin
+ * Verify the systray icon of pidgin appears in the panel
+----
  * Compile simple test program from bug #850017
  * Verify the Disabled menu can not be opened by clicking on it
  * Verify the Disabled menu can not be opened by clicking on the Enabled menu and then moving the mouse over to the Disabled one

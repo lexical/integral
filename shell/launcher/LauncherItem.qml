@@ -197,6 +197,8 @@ DropItem {
 
             /* This draws the icon, the tile background and the sheen on top */
             IconTile {
+                property bool refreshingIcon: false
+
                 id: icon
                 width: item.tileSize
                 height: item.tileSize
@@ -205,7 +207,7 @@ DropItem {
                 activeFocus: declarativeView.focus && item.activeFocus
                 backgroundFromIcon: item.backgroundFromIcon
 
-                source: (beHudItem && hudLoader) ? hudLoader.item.appIcon : item.icon
+                source: refreshingIcon ? "image://icons/unknown" : ((beHudItem && hudLoader) ? hudLoader.item.appIcon : item.icon)
                 tileBackgroundImage: (item.isBfb) ? "../launcher/artwork/squircle_base_54.png" : ""
                 tileShineImage: (item.isBfb) ? "../launcher/artwork/squircle_shine_54.png" : ""
                 selectedTileBackgroundImage: (item.isBfb) ? "../launcher/artwork/squircle_base_selected_54.png" : ""
@@ -218,6 +220,14 @@ DropItem {
                     loops: Animation.Infinite
                     alwaysRunToEnd: true
                     running: launching
+                }
+
+                Connections {
+                    target: shellManager
+                    onIconThemeChanged: {
+                        icon.refreshingIcon = true
+                        icon.refreshingIcon = false
+                    }
                 }
             }
 

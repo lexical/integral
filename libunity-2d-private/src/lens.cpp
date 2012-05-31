@@ -175,7 +175,7 @@ void Lens::setNoResultsHint(const QString& hint) {
 
 void Lens::activate(const QString& uri)
 {
-    m_unityLens->Activate(uri.toStdString());
+    m_unityLens->Activate(QByteArray::fromPercentEncoding(uri.toUtf8()).constData());
 }
 
 void Lens::onActivated(std::string const& uri, unity::dash::HandledType type, unity::dash::Lens::Hints const&)

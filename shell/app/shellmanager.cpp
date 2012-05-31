@@ -62,6 +62,7 @@ static const int DASH_MIN_SCREEN_HEIGHT = 1084;
 static const char* HUD_SHORTCUT_KEY = "/apps/compiz-1/plugins/unityshell/screen0/options/show_hud";
 
 GOBJECT_CALLBACK1(activeWorkspaceChangedCB, "onActiveWorkspaceChanged");
+GOBJECT_CALLBACK0(iconThemeChangedCB, "onIconThemeChanged");
 
 struct ShellManagerPrivate
 {
@@ -334,11 +335,13 @@ ShellManager::ShellManager(const QUrl &sourceFileUrl, QObject* parent) :
     updateDashAlwaysFullScreen();
 
     g_signal_connect(G_OBJECT(wnck_screen_get_default()), "active_workspace_changed", G_CALLBACK(activeWorkspaceChangedCB), this);
+    g_signal_connect(G_OBJECT(gtk_icon_theme_get_default()), "changed", G_CALLBACK(iconThemeChangedCB), this);
 }
 
 ShellManager::~ShellManager()
 {
     g_signal_handlers_disconnect_by_func(G_OBJECT(wnck_screen_get_default()), gpointer(activeWorkspaceChangedCB), this);
+    g_signal_handlers_disconnect_by_func(G_OBJECT(gtk_icon_theme_get_default()), gpointer(iconThemeChangedCB), this);
 
     qDeleteAll(d->m_viewList);
     delete d;
@@ -490,6 +493,11 @@ void ShellManager::onActiveWorkspaceChanged()
     Q_EMIT activeWorkspaceChanged();
     d->m_last_focused_window = None;
     Q_EMIT lastFocusedWindowChanged(d->m_last_focused_window);
+}
+
+void ShellManager::onIconThemeChanged()
+{
+    Q_EMIT iconThemeChanged();
 }
 
 void ShellManager::onHudActivationShortcutChanged()
