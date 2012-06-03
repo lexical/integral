@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity-2d\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-10 10:59+0100\n"
-"PO-Revision-Date: 2012-03-08 16:52+0000\n"
+"PO-Revision-Date: 2012-06-02 14:18+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,19 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2012-05-24 21:32+0000\n"
-"X-Generator: Launchpad (build 15288)\n"
+"X-Launchpad-Export-Date: 2012-06-03 05:16+0000\n"
+"X-Generator: Launchpad (build 15342)\n"
 
 #: shell/launcher/LauncherList.qml:90
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "відкрито %1 вікно"
+msgstr[1] "відкрито %1 вікна"
+msgstr[2] "відкрито %1 вікон"
 
 #: shell/launcher/LauncherList.qml:93
 msgid "not running"
-msgstr ""
+msgstr "не запущено"
 
 #: shell/hud/Hud.qml:211
 msgid "Type your Command"
@@ -40,40 +41,41 @@ msgstr "Помилка: не вдалося встановити з’єднан
 
 #: shell/dash/FilterPane.qml:71
 msgid "Filter results"
-msgstr ""
+msgstr "Фільтрування результатів"
 
 #: shell/dash/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 active"
-msgstr ""
+msgstr "Задіяно фільтр %1"
 
 #: shell/dash/FilterLoader.qml:40
 #, qt-format
 msgid "Filter %1 inactive"
-msgstr ""
+msgstr "Не задіяно фільтр %1"
 
 #: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
 msgid "All"
-msgstr ""
+msgstr "Всі"
 
 #: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
 msgid "Search"
-msgstr ""
+msgstr "Шукати"
 
 #: shell/dash/CategoryHeader.qml:37
 msgid "not expanded"
-msgstr ""
+msgstr "не розгорнуто"
 
 #: shell/dash/CategoryHeader.qml:37
 msgid "expanded"
-msgstr ""
+msgstr "розгорнуто"
 
 #: shell/dash/CategoryHeader.qml:93
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Переглянути ще %1 результат"
+msgstr[1] "Переглянути ще %1 результати"
+msgstr[2] "Переглянути ще %1 результатів"
 
 #: shell/dash/CategoryHeader.qml:95
 msgid "See fewer results"
@@ -89,7 +91,7 @@ msgstr "Виштовхнути"
 
 #: libunity-2d-private/src/launcherdevice.cpp:287
 msgid "Safely remove"
-msgstr ""
+msgstr "Безпечно вилучити"
 
 #: libunity-2d-private/src/application.cpp:1000
 msgid "Lock to Launcher"
@@ -105,13 +107,13 @@ msgstr "Вийти"
 
 #: libunity-2d-private/src/bfb.cpp:69
 msgid "Dash home"
-msgstr ""
+msgstr "Домівка панелі"
 
 #. TRANSLATORS: This refers to the direction of text
 #. (left-to-right or right-to-left): possible values are LTR or RTL
 #: libunity-2d-private/src/unity2dapplication.cpp:173
 msgid "QT_LAYOUT_DIRECTION"
-msgstr ""
+msgstr "LTR"
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home"
