@@ -164,7 +164,7 @@ void IndicatorsManager::checkMousePosition()
     qApp->x11ProcessEvent(reinterpret_cast<XEvent*>(&event));
 
     IndicatorEntryWidget* entryWidget = qobject_cast<IndicatorEntryWidget*>(widget);
-    if (!entryWidget) {
+    if (!entryWidget || !entryWidget->isSensitive()) {
         return;
     }
     entryWidget->showMenu(Qt::NoButton);
@@ -183,6 +183,9 @@ void IndicatorsManager::onEntryActivateRequest(const std::string& entryId)
     }
     if (!widget) {
         UQ_WARNING << "Could not find a widget for IndicatorEntry with id" << QString::fromStdString(entryId);
+        return;
+    }
+    if (!widget->isSensitive()) {
         return;
     }
     widget->showMenu(Qt::NoButton);

@@ -321,7 +321,7 @@ QPixmap IndicatorEntryWidget::decodeIcon()
 void IndicatorEntryWidget::mousePressEvent(QMouseEvent* event)
 {
     UQ_RETURN_IF_FAIL(m_hasIcon || m_hasLabel);
-    if (event->button() != Qt::MiddleButton)
+    if (event->button() != Qt::MiddleButton && isSensitive())
 	    showMenu(Qt::LeftButton);
 }
 
@@ -356,6 +356,11 @@ void IndicatorEntryWidget::showMenu(Qt::MouseButton qtButton)
 bool IndicatorEntryWidget::activatedByThisEntry() const
 {
     return m_activatedByThisEntry;
+}
+
+bool IndicatorEntryWidget::isSensitive() const
+{
+    return m_entry->image_sensitive() || m_entry->label_sensitive();
 }
 
 void IndicatorEntryWidget::setPadding(int padding)
