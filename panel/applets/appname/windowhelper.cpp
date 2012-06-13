@@ -211,8 +211,7 @@ void WindowHelper::close()
     } else if (HUDClient::instance()->activeInScreen(d->screen())) {
         HUDClient::instance()->setActive(false);
     } else {
-        guint32 timestamp = QDateTime::currentDateTime().toTime_t();
-        wnck_window_close(d->m_window, timestamp);
+        wnck_window_close(d->m_window, QX11Info::appTime());
     }
 }
 
