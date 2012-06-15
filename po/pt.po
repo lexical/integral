@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2012-05-24 21:32+0000\n"
-"X-Generator: Launchpad (build 15288)\n"
+"X-Launchpad-Export-Date: 2012-06-15 04:58+0000\n"
+"X-Generator: Launchpad (build 15414)\n"
 
 #: shell/launcher/LauncherList.qml:90
 #, qt-format
@@ -118,7 +118,7 @@ msgstr ""
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home screen"
-msgstr ""
+msgstr "Ecrã inicial"
 
 #: libunity-2d-private/src/trash.cpp:134
 msgid "Trash"
@@ -137,7 +137,7 @@ msgstr "Esvaziar Lixo"
 
 #: libunity-2d-private/src/lens.cpp:348
 msgid "Sorry, there is nothing that matches your search."
-msgstr ""
+msgstr "Desculpe, não há nada que corresponda à sua busca."
 
 #: libunity-2d-private/src/workspaces.cpp:79
 msgid "Workspaces"
