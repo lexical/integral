@@ -15,19 +15,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n == 1) ? 0 : 1;\n"
-"X-Launchpad-Export-Date: 2012-06-15 04:58+0000\n"
-"X-Generator: Launchpad (build 15414)\n"
+"X-Launchpad-Export-Date: 2012-07-18 05:50+0000\n"
+"X-Generator: Launchpad (build 15637)\n"
 
 #: shell/launcher/LauncherList.qml:90
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 ဝိၼ်းတူဝ်း ပိုတ်ႇဝႆ့ယဝ့်"
+msgstr[1] "%1 ဝိၼ်းတူဝ်း ပိုတ်ႇဝႆ့ယဝ့်"
 
 #: shell/launcher/LauncherList.qml:93
 msgid "not running"
-msgstr ""
+msgstr "ဢမ်ႇႁဵတ်းၵၢၼ်"
 
 #: shell/hud/Hud.qml:211
 msgid "Type your Command"
@@ -39,56 +39,56 @@ msgstr ""
 
 #: shell/dash/FilterPane.qml:71
 msgid "Filter results"
-msgstr ""
+msgstr "ၽွၼ်းလႆႈ ၸႅတ်ႈၽေ"
 
 #: shell/dash/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 active"
-msgstr ""
+msgstr "ၸႅတ်ႈၽေ %1 တူင့်ၼိုင်"
 
 #: shell/dash/FilterLoader.qml:40
 #, qt-format
 msgid "Filter %1 inactive"
-msgstr ""
+msgstr "ၸႅတ်ႈၽေ %1 ဢမ်ႇတူင့်ၼိုင်"
 
 #: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
 msgid "All"
-msgstr ""
+msgstr "တၢင်းမူတ်း"
 
 #: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
 msgid "Search"
-msgstr ""
+msgstr "သွၵ်ႈ"
 
 #: shell/dash/CategoryHeader.qml:37
 msgid "not expanded"
-msgstr ""
+msgstr "ဢမ်ႇၶႂၢၵ်ႈဝႆ့"
 
 #: shell/dash/CategoryHeader.qml:37
 msgid "expanded"
-msgstr ""
+msgstr "ၶႂၢၵ်ႈဝႆ့"
 
 #: shell/dash/CategoryHeader.qml:93
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "တူၺ်း ၽွၼ်းလႆႈ %1 ႁႂ်ႈႁၼ်ၼမ်"
+msgstr[1] "တူၺ်း ၽွၼ်းလႆႈ %1 ႁႂ်ႈႁၼ်ၼမ်"
 
 #: shell/dash/CategoryHeader.qml:95
 msgid "See fewer results"
-msgstr ""
+msgstr "တူၺ်းၽွၼ်းလႆႈ တီႈၵႅပ်ႈ"
 
 #: shell/dash/Home.qml:82
 msgid "Shortcuts"
-msgstr ""
+msgstr "လၢႆးဝႆး"
 
 #: libunity-2d-private/src/launcherdevice.cpp:279
 msgid "Eject"
-msgstr ""
+msgstr "ဢဝ်ဢွၵ်ႇ"
 
 #: libunity-2d-private/src/launcherdevice.cpp:287
 msgid "Safely remove"
-msgstr ""
+msgstr "ထွၼ်ဢွၵ်ႇလႆႈလီငၢမ်းယဝ့်"
 
 #: libunity-2d-private/src/application.cpp:1000
 msgid "Lock to Launcher"
@@ -100,17 +100,17 @@ msgstr ""
 
 #: libunity-2d-private/src/application.cpp:1007
 msgid "Quit"
-msgstr ""
+msgstr "ဢိုတ်း"
 
 #: libunity-2d-private/src/bfb.cpp:69
 msgid "Dash home"
-msgstr ""
+msgstr "ၽိုၼ်ငဝ်ႈ"
 
 #. TRANSLATORS: This refers to the direction of text
 #. (left-to-right or right-to-left): possible values are LTR or RTL
 #: libunity-2d-private/src/unity2dapplication.cpp:173
 msgid "QT_LAYOUT_DIRECTION"
-msgstr ""
+msgstr "QT_LAYOUT_DIRECTION"
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home"
@@ -122,18 +122,18 @@ msgstr ""
 
 #: libunity-2d-private/src/trash.cpp:134
 msgid "Trash"
-msgstr ""
+msgstr "ၵူၺ်ယုၵ်းယၵ်း"
 
 #: libunity-2d-private/src/trash.cpp:214
 #, c-format, qt-plural-format
 msgid "%n item in trash"
 msgid_plural "%n items in trash"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n ၸိူဝ်းမီးၼႂ်း ၵူၺ်ယုၵ်းယၵ်း"
+msgstr[1] "%n ၸိူဝ်းမီးၼႂ်း ၵူၺ်ယုၵ်းယၵ်း"
 
 #: libunity-2d-private/src/trash.cpp:221
 msgid "Empty Trash"
-msgstr ""
+msgstr "ၽဵဝ်ႈပႅတ်ႈ ၵူၺ်ယုၵ်းယၵ်း"
 
 #: libunity-2d-private/src/lens.cpp:348
 msgid "Sorry, there is nothing that matches your search."
@@ -141,8 +141,38 @@ msgstr ""
 
 #: libunity-2d-private/src/workspaces.cpp:79
 msgid "Workspaces"
-msgstr ""
+msgstr "ဢွင်ႈႁဵတ်းၵၢၼ်"
 
 #: panel/applets/appname/appnameapplet.cpp:368
 msgid "Ubuntu Desktop"
 msgstr ""
+
+#~ msgid "Keep in launcher"
+#~ msgstr "ၼဵပ်းသႂ်ႇဝႆ့တီႈ လၢၼ်ႇၶျိူဝ်ႇ"
+
+#~ msgid "Remove from launcher"
+#~ msgstr "ထွၼ်ဢွၵ်ႇပႅတ်ႈတီႈ လၢၼ်ႇၶျိူဝ်ႇ"
+
+#~ msgid "Media Apps"
+#~ msgstr "ဢႅပ့်တႃႇသိုဝ်ႇၶၢဝ်ႇ"
+
+#~ msgid "Internet Apps"
+#~ msgstr "ဢႅပ့်တႃႇဢိၼ်ႇထိူဝ်ႇၼႅတ့်"
+
+#~ msgid "More Apps"
+#~ msgstr "ဢႅပ့်တၢင်ႇၸိူဝ်း"
+
+#~ msgid "Find Files"
+#~ msgstr "ႁႃသွႆ့"
+
+#~ msgid "Browse the Web"
+#~ msgstr "ပိုတ်ႇၼႃႇလိၵ်ႈဝႅပ့်"
+
+#~ msgid "View Photos"
+#~ msgstr "တူၺ်းၶႅပ်းႁၢင်ႈ"
+
+#~ msgid "Check Email"
+#~ msgstr "ၵူတ်ႇတူၺ်းမေးလ်"
+
+#~ msgid "Listen to Music"
+#~ msgstr "ထွမ်ႇၽဵင်းၵႂၢမ်း"
