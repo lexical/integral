@@ -8,71 +8,69 @@ msgstr ""
 "Project-Id-Version: unity-2d\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-10 10:59+0100\n"
-"PO-Revision-Date: 2012-03-08 16:48+0000\n"
-"Last-Translator: Novid <erghezi@live.com>\n"
+"PO-Revision-Date: 2012-08-12 09:40+0000\n"
+"Last-Translator: Danial Behzadi <dani.behzi@gmail.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2012-07-18 05:50+0000\n"
-"X-Generator: Launchpad (build 15637)\n"
+"X-Launchpad-Export-Date: 2012-08-13 05:52+0000\n"
+"X-Generator: Launchpad (build 15791)\n"
 
 #: shell/launcher/LauncherList.qml:90
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 پنجره باز شد"
 
 #: shell/launcher/LauncherList.qml:93
 msgid "not running"
-msgstr ""
+msgstr "اجرا نمی‌شود"
 
 #: shell/hud/Hud.qml:211
 msgid "Type your Command"
-msgstr ""
+msgstr "دستور خود را وارد کنید"
 
 #: shell/hud/Hud.qml:212
 msgid "Error: HUD service not connected"
-msgstr ""
+msgstr "خطا: خدمت HUD متصل نیست"
 
 #: shell/dash/FilterPane.qml:71
 msgid "Filter results"
-msgstr ""
+msgstr "پالایش نتایج"
 
 #: shell/dash/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 active"
-msgstr ""
+msgstr "%1 فعال را پالایش کن"
 
 #: shell/dash/FilterLoader.qml:40
 #, qt-format
 msgid "Filter %1 inactive"
-msgstr ""
+msgstr "%1 غیر را پالایش کن"
 
 #: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
 msgid "All"
-msgstr ""
+msgstr "همه"
 
 #: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
 msgid "Search"
-msgstr ""
+msgstr "جست‌وجو‌"
 
 #: shell/dash/CategoryHeader.qml:37
 msgid "not expanded"
-msgstr ""
+msgstr "گسترش نیافته"
 
 #: shell/dash/CategoryHeader.qml:37
 msgid "expanded"
-msgstr ""
+msgstr "گسترش یافته"
 
 #: shell/dash/CategoryHeader.qml:93
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "دیدن %1 نتیجه‌ی بیش‌تر"
 
 #: shell/dash/CategoryHeader.qml:95
 msgid "See fewer results"
@@ -88,15 +86,15 @@ msgstr "خارج کردن"
 
 #: libunity-2d-private/src/launcherdevice.cpp:287
 msgid "Safely remove"
-msgstr ""
+msgstr "برداشتن امن"
 
 #: libunity-2d-private/src/application.cpp:1000
 msgid "Lock to Launcher"
-msgstr ""
+msgstr "قفل به اجراگر"
 
 #: libunity-2d-private/src/application.cpp:1000
 msgid "Unlock from Launcher"
-msgstr ""
+msgstr "بازکردن قفل از اجراگر"
 
 #: libunity-2d-private/src/application.cpp:1007
 msgid "Quit"
@@ -104,21 +102,21 @@ msgstr "خروج"
 
 #: libunity-2d-private/src/bfb.cpp:69
 msgid "Dash home"
-msgstr ""
+msgstr "خانه‌ی دش"
 
 #. TRANSLATORS: This refers to the direction of text
 #. (left-to-right or right-to-left): possible values are LTR or RTL
 #: libunity-2d-private/src/unity2dapplication.cpp:173
 msgid "QT_LAYOUT_DIRECTION"
-msgstr ""
+msgstr "RTL"
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home"
-msgstr ""
+msgstr "خانه"
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home screen"
-msgstr ""
+msgstr "صفحه‌ی خانه"
 
 #: libunity-2d-private/src/trash.cpp:134
 msgid "Trash"
@@ -136,7 +134,7 @@ msgstr "خالی کردن زباله‌دان"
 
 #: libunity-2d-private/src/lens.cpp:348
 msgid "Sorry, there is nothing that matches your search."
-msgstr ""
+msgstr "متأسفیم، چیزی نیست که با جست‌وجوی شما مطابق باشد."
 
 #: libunity-2d-private/src/workspaces.cpp:79
 msgid "Workspaces"
@@ -144,7 +142,7 @@ msgstr "فضاهای کاری"
 
 #: panel/applets/appname/appnameapplet.cpp:368
 msgid "Ubuntu Desktop"
-msgstr ""
+msgstr "میزکار اوبونتو"
 
 #~ msgid "Listen to Music"
 #~ msgstr "گوش دادن به موسیقی"
