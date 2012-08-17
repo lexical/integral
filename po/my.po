@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: unity-2d\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-10 10:59+0100\n"
-"PO-Revision-Date: 2012-03-08 15:40+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2012-08-16 09:40+0000\n"
+"Last-Translator: Pyae Sone <Unknown>\n"
 "Language-Team: Burmese <my@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2012-07-18 05:50+0000\n"
-"X-Generator: Launchpad (build 15637)\n"
+"X-Launchpad-Export-Date: 2012-08-17 05:10+0000\n"
+"X-Generator: Launchpad (build 15810)\n"
 
 #: shell/launcher/LauncherList.qml:90
 #, qt-format
@@ -35,7 +35,7 @@ msgstr "သင်၏ Command ကိုရိုက်ပါ။"
 
 #: shell/hud/Hud.qml:212
 msgid "Error: HUD service not connected"
-msgstr ""
+msgstr "Error: HUD service မချိတ်ဆက်မိပါ။"
 
 #: shell/dash/FilterPane.qml:71
 msgid "Filter results"
@@ -76,19 +76,19 @@ msgstr[1] ""
 
 #: shell/dash/CategoryHeader.qml:95
 msgid "See fewer results"
-msgstr ""
+msgstr "ရလဒ် နည်းနည်းသာ ကြည့်မယ်"
 
 #: shell/dash/Home.qml:82
 msgid "Shortcuts"
-msgstr ""
+msgstr "အတိုကောက်"
 
 #: libunity-2d-private/src/launcherdevice.cpp:279
 msgid "Eject"
-msgstr ""
+msgstr "ထုတ်ပါ။"
 
 #: libunity-2d-private/src/launcherdevice.cpp:287
 msgid "Safely remove"
-msgstr ""
+msgstr "သေချာစွာဖြုတ်မည်။"
 
 #: libunity-2d-private/src/application.cpp:1000
 msgid "Lock to Launcher"
@@ -100,7 +100,7 @@ msgstr "Unlock from Launcher"
 
 #: libunity-2d-private/src/application.cpp:1007
 msgid "Quit"
-msgstr ""
+msgstr "ထွက်"
 
 #: libunity-2d-private/src/bfb.cpp:69
 msgid "Dash home"
@@ -122,26 +122,25 @@ msgstr "Home screen"
 
 #: libunity-2d-private/src/trash.cpp:134
 msgid "Trash"
-msgstr ""
+msgstr "အမှိုက်ပုံး"
 
 #: libunity-2d-private/src/trash.cpp:214
 #, c-format, qt-plural-format
 msgid "%n item in trash"
 msgid_plural "%n items in trash"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ပစ္စည်း %n ခု အမှိုက်ပုံးထဲတွင် ရှိနေသည်"
 
 #: libunity-2d-private/src/trash.cpp:221
 msgid "Empty Trash"
-msgstr ""
+msgstr "အမှိုက်ပုံးရှင်းပါ"
 
 #: libunity-2d-private/src/lens.cpp:348
 msgid "Sorry, there is nothing that matches your search."
-msgstr ""
+msgstr "ဆောရီး၊ သင်၏ရှာဖွေမူနှင့်တူညီတာဘာမှမရှိပါ။"
 
 #: libunity-2d-private/src/workspaces.cpp:79
 msgid "Workspaces"
-msgstr ""
+msgstr "အလုပ်နေရာ"
 
 #: panel/applets/appname/appnameapplet.cpp:368
 msgid "Ubuntu Desktop"
