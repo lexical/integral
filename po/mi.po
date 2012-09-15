@@ -15,23 +15,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2012-07-24 06:05+0000\n"
-"X-Generator: Launchpad (build 15668)\n"
+"X-Launchpad-Export-Date: 2012-09-15 05:17+0000\n"
+"X-Generator: Launchpad (build 15944)\n"
 
 #: shell/launcher/LauncherList.qml:90
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "I huanga %1 matapihi"
+msgstr[1] "I huanga %1 matapihi"
 
 #: shell/launcher/LauncherList.qml:93
 msgid "not running"
-msgstr ""
+msgstr "kāore e whakaterea ana"
 
 #: shell/hud/Hud.qml:211
 msgid "Type your Command"
-msgstr ""
+msgstr "Pato tōu tono"
 
 #: shell/hud/Hud.qml:212
 msgid "Error: HUD service not connected"
@@ -39,17 +39,17 @@ msgstr ""
 
 #: shell/dash/FilterPane.qml:71
 msgid "Filter results"
-msgstr ""
+msgstr "Tātari hua"
 
 #: shell/dash/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 active"
-msgstr ""
+msgstr "Kakama te tātari %1"
 
 #: shell/dash/FilterLoader.qml:40
 #, qt-format
 msgid "Filter %1 inactive"
-msgstr ""
+msgstr "Makuku te tātari %1"
 
 #: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
 msgid "All"
@@ -61,26 +61,26 @@ msgstr "Rapu"
 
 #: shell/dash/CategoryHeader.qml:37
 msgid "not expanded"
-msgstr ""
+msgstr "ngahoro"
 
 #: shell/dash/CategoryHeader.qml:37
 msgid "expanded"
-msgstr ""
+msgstr "roha"
 
 #: shell/dash/CategoryHeader.qml:93
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Titiro %1 hua nuku atu"
+msgstr[1] "Titiro %1 hua nuku atu"
 
 #: shell/dash/CategoryHeader.qml:95
 msgid "See fewer results"
-msgstr ""
+msgstr "Titiro hua iti iho"
 
 #: shell/dash/Home.qml:82
 msgid "Shortcuts"
-msgstr ""
+msgstr "Pokatata"
 
 #: libunity-2d-private/src/launcherdevice.cpp:279
 msgid "Eject"
@@ -88,29 +88,29 @@ msgstr "Tuwha"
 
 #: libunity-2d-private/src/launcherdevice.cpp:287
 msgid "Safely remove"
-msgstr ""
+msgstr "Tango ora"
 
 #: libunity-2d-private/src/application.cpp:1000
 msgid "Lock to Launcher"
-msgstr ""
+msgstr "Rakaina ki Kaiwhakarewa"
 
 #: libunity-2d-private/src/application.cpp:1000
 msgid "Unlock from Launcher"
-msgstr ""
+msgstr "Huakina ki Kaiwhakarewa"
 
 #: libunity-2d-private/src/application.cpp:1007
 msgid "Quit"
-msgstr ""
+msgstr "Whakamutu"
 
 #: libunity-2d-private/src/bfb.cpp:69
 msgid "Dash home"
-msgstr ""
+msgstr "Papatohu kāinga"
 
 #. TRANSLATORS: This refers to the direction of text
 #. (left-to-right or right-to-left): possible values are LTR or RTL
 #: libunity-2d-private/src/unity2dapplication.cpp:173
 msgid "QT_LAYOUT_DIRECTION"
-msgstr ""
+msgstr "LTR"
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home"
@@ -118,7 +118,7 @@ msgstr "Kāinga"
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home screen"
-msgstr ""
+msgstr "Mata kāinga"
 
 #: libunity-2d-private/src/trash.cpp:134
 msgid "Trash"
@@ -128,8 +128,8 @@ msgstr "Te Para"
 #, c-format, qt-plural-format
 msgid "%n item in trash"
 msgid_plural "%n items in trash"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n mea i roto i te para"
+msgstr[1] "%n mea i roto i te para"
 
 #: libunity-2d-private/src/trash.cpp:221
 msgid "Empty Trash"
@@ -137,7 +137,7 @@ msgstr "Whakangita te para"
 
 #: libunity-2d-private/src/lens.cpp:348
 msgid "Sorry, there is nothing that matches your search."
-msgstr ""
+msgstr "Kāore mea i te taurite ki nōu rapu."
 
 #: libunity-2d-private/src/workspaces.cpp:79
 msgid "Workspaces"
@@ -145,4 +145,4 @@ msgstr "Mokowāmahi"
 
 #: panel/applets/appname/appnameapplet.cpp:368
 msgid "Ubuntu Desktop"
-msgstr ""
+msgstr "Papamahi Ubuntu"

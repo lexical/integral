@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2012-07-18 05:50+0000\n"
-"X-Generator: Launchpad (build 15637)\n"
+"X-Launchpad-Export-Date: 2012-09-15 05:17+0000\n"
+"X-Generator: Launchpad (build 15944)\n"
 
 #: shell/launcher/LauncherList.qml:90
 #, qt-format
@@ -35,7 +35,7 @@ msgstr ""
 
 #: shell/hud/Hud.qml:212
 msgid "Error: HUD service not connected"
-msgstr ""
+msgstr "Error: HUD-service ikke tilkoblet"
 
 #: shell/dash/FilterPane.qml:71
 msgid "Filter results"
@@ -114,7 +114,7 @@ msgstr ""
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home"
-msgstr ""
+msgstr "Hjem"
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home screen"
@@ -145,7 +145,7 @@ msgstr "Arbeidsområder"
 
 #: panel/applets/appname/appnameapplet.cpp:368
 msgid "Ubuntu Desktop"
-msgstr ""
+msgstr "Ubuntu skrivebord"
 
 #~ msgid "Listen to Music"
 #~ msgstr "Lytt til musikk"

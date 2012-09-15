@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2012-07-18 05:50+0000\n"
-"X-Generator: Launchpad (build 15637)\n"
+"X-Launchpad-Export-Date: 2012-09-15 05:17+0000\n"
+"X-Generator: Launchpad (build 15944)\n"
 
 #: shell/launcher/LauncherList.qml:90
 #, qt-format
@@ -76,7 +76,7 @@ msgstr[1] ""
 
 #: shell/dash/CategoryHeader.qml:95
 msgid "See fewer results"
-msgstr "Vaata vähem tulemusi"
+msgstr "Näita vähem tulemusi"
 
 #: shell/dash/Home.qml:82
 msgid "Shortcuts"
@@ -128,8 +128,8 @@ msgstr "Prügikast"
 #, c-format, qt-plural-format
 msgid "%n item in trash"
 msgid_plural "%n items in trash"
-msgstr[0] "%n asi prügikastis"
-msgstr[1] "%n asja prügikastis"
+msgstr[0] "%n ese prügikastis"
+msgstr[1] "%n eset prügikastis"
 
 #: libunity-2d-private/src/trash.cpp:221
 msgid "Empty Trash"
