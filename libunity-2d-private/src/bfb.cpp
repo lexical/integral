@@ -71,7 +71,7 @@ QString BfbItem::name() const
 
 QString BfbItem::icon() const
 {
-    return QString(UNITY_DIR) + "6/launcher_bfb.png";
+    return QString(UNITY_DIR) + "5/launcher_bfb.png";
 }
 
 bool BfbItem::launching() const
