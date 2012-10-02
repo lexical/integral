@@ -27,6 +27,30 @@ unity-2d (5.14.0-0ubuntu1) UNRELEASED; urgency=low
 
  -- Francis Ginther <francis.ginther@canonical.com>  Tue, 04 Sep 2012 14:39:28 -0500
 
+unity-2d (5.12.0-0ubuntu1.2) precise-updates; urgency=low
+
+  [ Łukasz 'sil2100' Zemczak ]
+  * Cherry-picked from upstream:
+    - Update dependency to the renamed libgeis-dev (LP: #1046392)
+  * debian/control:
+    - Rename dependency to libgeis-dev
+
+  [ Didier Roche ]
+  * debian/control:
+    - build-dep on latest nux and unity as libgeis-dev and
+      libutouch-geis-dev are conflicting
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 12 Sep 2012 09:51:58 +0200
+
+unity-2d (5.12.0-0ubuntu1.1) precise-security; urgency=low
+
+  * Fix issue with unity-2d sending the wrong event timestamp when closing an
+    application window; This bug was exposed by a recent Firefox update which
+    changed the way Firefox handled windows based on timestamps. (LP: #1010466)
+    - panel/applets/appname/windowhelper.cpp
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Wed, 13 Jun 2012 17:36:33 +0200
+
 unity-2d (5.12.0-0ubuntu1) precise-proposed; urgency=low
 
   * New upstream release:
