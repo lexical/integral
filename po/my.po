@@ -15,17 +15,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2012-09-15 05:17+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2012-10-03 05:40+0000\n"
+"X-Generator: Launchpad (build 16061)\n"
 
-#: shell/launcher/LauncherList.qml:90
+#: launcher/LauncherList.qml:82
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
 msgstr[0] ""
 msgstr[1] ""
 
-#: shell/launcher/LauncherList.qml:93
+#: launcher/LauncherList.qml:85
 msgid "not running"
 msgstr "not running"
 
@@ -37,56 +37,56 @@ msgstr "သင်၏ Command ကိုရိုက်ပါ။"
 msgid "Error: HUD service not connected"
 msgstr "Error: HUD service မချိတ်ဆက်မိပါ။"
 
-#: shell/dash/FilterPane.qml:71
+#: places/FilterPane.qml:69
 msgid "Filter results"
 msgstr "အဖြေများကို ကန့်သတ်မည်။"
 
-#: shell/dash/FilterLoader.qml:38
+#: places/FilterLoader.qml:36
 #, qt-format
 msgid "Filter %1 active"
 msgstr "Filter %1 active"
 
-#: shell/dash/FilterLoader.qml:40
+#: places/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 inactive"
 msgstr "Filter %1 inactive"
 
-#: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
+#: places/FilterLoader.qml:90
 msgid "All"
 msgstr "အားလုံး"
 
-#: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
+#: places/SearchEntry.qml:176
 msgid "Search"
 msgstr "ရှာဖွေရန်"
 
-#: shell/dash/CategoryHeader.qml:37
+#: places/CategoryHeader.qml:36
 msgid "not expanded"
 msgstr "not expanded"
 
-#: shell/dash/CategoryHeader.qml:37
+#: places/CategoryHeader.qml:36
 msgid "expanded"
 msgstr "expanded"
 
-#: shell/dash/CategoryHeader.qml:93
+#: places/CategoryHeader.qml:97
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
 msgstr[0] ""
 msgstr[1] ""
 
-#: shell/dash/CategoryHeader.qml:95
+#: places/CategoryHeader.qml:99
 msgid "See fewer results"
 msgstr "ရလဒ် နည်းနည်းသာ ကြည့်မယ်"
 
-#: shell/dash/Home.qml:82
+#: places/Home.qml:80
 msgid "Shortcuts"
 msgstr "အတိုကောက်"
 
-#: libunity-2d-private/src/launcherdevice.cpp:279
+#: libunity-2d-private/src/launcherdevice.cpp:273
 msgid "Eject"
 msgstr "ထုတ်ပါ။"
 
-#: libunity-2d-private/src/launcherdevice.cpp:287
+#: libunity-2d-private/src/launcherdevice.cpp:281
 msgid "Safely remove"
 msgstr "သေချာစွာဖြုတ်မည်။"
 
@@ -98,17 +98,15 @@ msgstr "Lock to Launcher"
 msgid "Unlock from Launcher"
 msgstr "Unlock from Launcher"
 
-#: libunity-2d-private/src/application.cpp:1007
+#: libunity-2d-private/src/launcherapplication.cpp:910
 msgid "Quit"
 msgstr "ထွက်"
 
-#: libunity-2d-private/src/bfb.cpp:69
+#: libunity-2d-private/src/bfb.cpp:71
 msgid "Dash home"
 msgstr "Dash home"
 
-#. TRANSLATORS: This refers to the direction of text
-#. (left-to-right or right-to-left): possible values are LTR or RTL
-#: libunity-2d-private/src/unity2dapplication.cpp:173
+#: libunity-2d-private/src/unity2dapplication.cpp:151
 msgid "QT_LAYOUT_DIRECTION"
 msgstr ""
 
@@ -120,17 +118,17 @@ msgstr "ပင်မ"
 msgid "Home screen"
 msgstr "Home screen"
 
-#: libunity-2d-private/src/trash.cpp:134
+#: libunity-2d-private/src/trash.cpp:128
 msgid "Trash"
 msgstr "အမှိုက်ပုံး"
 
-#: libunity-2d-private/src/trash.cpp:214
+#: libunity-2d-private/src/trash.cpp:208
 #, c-format, qt-plural-format
 msgid "%n item in trash"
 msgid_plural "%n items in trash"
 msgstr[0] "ပစ္စည်း %n ခု အမှိုက်ပုံးထဲတွင် ရှိနေသည်"
 
-#: libunity-2d-private/src/trash.cpp:221
+#: libunity-2d-private/src/trash.cpp:215
 msgid "Empty Trash"
 msgstr "အမှိုက်ပုံးရှင်းပါ"
 
@@ -138,7 +136,7 @@ msgstr "အမှိုက်ပုံးရှင်းပါ"
 msgid "Sorry, there is nothing that matches your search."
 msgstr "ဆောရီး၊ သင်၏ရှာဖွေမူနှင့်တူညီတာဘာမှမရှိပါ။"
 
-#: libunity-2d-private/src/workspaces.cpp:79
+#: libunity-2d-private/src/workspaces.cpp:73
 msgid "Workspaces"
 msgstr "အလုပ်နေရာ"
 

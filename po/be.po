@@ -16,17 +16,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Launchpad-Export-Date: 2012-09-15 05:17+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2012-10-03 05:40+0000\n"
+"X-Generator: Launchpad (build 16061)\n"
 
-#: shell/launcher/LauncherList.qml:90
+#: launcher/LauncherList.qml:82
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
 msgstr[0] ""
 msgstr[1] ""
 
-#: shell/launcher/LauncherList.qml:93
+#: launcher/LauncherList.qml:85
 msgid "not running"
 msgstr "не выконваецца"
 
@@ -38,37 +38,37 @@ msgstr "Увядзіце каманду"
 msgid "Error: HUD service not connected"
 msgstr "Памылка: паслуга HUD не далучана"
 
-#: shell/dash/FilterPane.qml:71
+#: places/FilterPane.qml:69
 msgid "Filter results"
 msgstr "Фільтраваць вынікі"
 
-#: shell/dash/FilterLoader.qml:38
+#: places/FilterLoader.qml:36
 #, qt-format
 msgid "Filter %1 active"
 msgstr ""
 
-#: shell/dash/FilterLoader.qml:40
+#: places/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 inactive"
 msgstr ""
 
-#: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
+#: places/FilterLoader.qml:90
 msgid "All"
 msgstr ""
 
-#: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
+#: places/SearchEntry.qml:176
 msgid "Search"
 msgstr "Пошук"
 
-#: shell/dash/CategoryHeader.qml:37
+#: places/CategoryHeader.qml:36
 msgid "not expanded"
 msgstr ""
 
-#: shell/dash/CategoryHeader.qml:37
+#: places/CategoryHeader.qml:36
 msgid "expanded"
 msgstr ""
 
-#: shell/dash/CategoryHeader.qml:93
+#: places/CategoryHeader.qml:97
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
@@ -76,19 +76,19 @@ msgstr[0] "Паказаць яшчэ %1 вынік"
 msgstr[1] "Паказаць яшчэ %1 вынікі"
 msgstr[2] "Паказаць яшчэ %1 вынікаў"
 
-#: shell/dash/CategoryHeader.qml:95
+#: places/CategoryHeader.qml:99
 msgid "See fewer results"
-msgstr "Менш вынікаў"
+msgstr ""
 
-#: shell/dash/Home.qml:82
+#: places/Home.qml:80
 msgid "Shortcuts"
-msgstr "Хуткі выклік"
+msgstr ""
 
-#: libunity-2d-private/src/launcherdevice.cpp:279
+#: libunity-2d-private/src/launcherdevice.cpp:273
 msgid "Eject"
-msgstr "Выняць"
+msgstr ""
 
-#: libunity-2d-private/src/launcherdevice.cpp:287
+#: libunity-2d-private/src/launcherdevice.cpp:281
 msgid "Safely remove"
 msgstr "Бяспечна выняць"
 
@@ -100,17 +100,15 @@ msgstr "Замацаваць на панэлі"
 msgid "Unlock from Launcher"
 msgstr "Прыбраць з панэлі"
 
-#: libunity-2d-private/src/application.cpp:1007
+#: libunity-2d-private/src/launcherapplication.cpp:910
 msgid "Quit"
-msgstr "Выхад"
+msgstr ""
 
-#: libunity-2d-private/src/bfb.cpp:69
+#: libunity-2d-private/src/bfb.cpp:71
 msgid "Dash home"
 msgstr ""
 
-#. TRANSLATORS: This refers to the direction of text
-#. (left-to-right or right-to-left): possible values are LTR or RTL
-#: libunity-2d-private/src/unity2dapplication.cpp:173
+#: libunity-2d-private/src/unity2dapplication.cpp:151
 msgid "QT_LAYOUT_DIRECTION"
 msgstr ""
 
@@ -122,11 +120,11 @@ msgstr "Галоўнае меню"
 msgid "Home screen"
 msgstr "Хатні экран"
 
-#: libunity-2d-private/src/trash.cpp:134
+#: libunity-2d-private/src/trash.cpp:128
 msgid "Trash"
-msgstr "Сметніца"
+msgstr ""
 
-#: libunity-2d-private/src/trash.cpp:214
+#: libunity-2d-private/src/trash.cpp:208
 #, c-format, qt-plural-format
 msgid "%n item in trash"
 msgid_plural "%n items in trash"
@@ -134,17 +132,17 @@ msgstr[0] "%n элемент у сметніцы"
 msgstr[1] "%n элементы ў сметніцы"
 msgstr[2] "%n элементаў у сметніцы"
 
-#: libunity-2d-private/src/trash.cpp:221
+#: libunity-2d-private/src/trash.cpp:215
 msgid "Empty Trash"
-msgstr "Ачысціць сметніцу"
+msgstr ""
 
 #: libunity-2d-private/src/lens.cpp:348
 msgid "Sorry, there is nothing that matches your search."
 msgstr "Даруйце, але па вашаму запыту нічога не знайшлося."
 
-#: libunity-2d-private/src/workspaces.cpp:79
+#: libunity-2d-private/src/workspaces.cpp:73
 msgid "Workspaces"
-msgstr "Прасторы працы"
+msgstr ""
 
 #: panel/applets/appname/appnameapplet.cpp:368
 msgid "Ubuntu Desktop"
@@ -164,18 +162,3 @@ msgstr "Рабочы стол Ubuntu"
 
 #~ msgid "Remove from launcher"
 #~ msgstr "Выдаліць з панэлі запуску"
-
-#~ msgid "Listen to Music"
-#~ msgstr "Слухаць музыку"
-
-#~ msgid "Find Files"
-#~ msgstr "Пошук файлаў"
-
-#~ msgid "View Photos"
-#~ msgstr "Глядзець фота"
-
-#~ msgid "Browse the Web"
-#~ msgstr "Увайсці ў Інтэрнэт"
-
-#~ msgid "Check Email"
-#~ msgstr "Чытаць пошту"

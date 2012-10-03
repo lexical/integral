@@ -16,10 +16,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2012-09-15 05:17+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2012-10-03 05:40+0000\n"
+"X-Generator: Launchpad (build 16061)\n"
 
-#: shell/launcher/LauncherList.qml:90
+#: launcher/LauncherList.qml:82
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
@@ -27,7 +27,7 @@ msgstr[0] "відкрито %1 вікно"
 msgstr[1] "відкрито %1 вікна"
 msgstr[2] "відкрито %1 вікон"
 
-#: shell/launcher/LauncherList.qml:93
+#: launcher/LauncherList.qml:85
 msgid "not running"
 msgstr "не запущено"
 
@@ -39,37 +39,37 @@ msgstr "Введіть вашу команду"
 msgid "Error: HUD service not connected"
 msgstr "Помилка: не вдалося встановити з’єднання зі службою HUD"
 
-#: shell/dash/FilterPane.qml:71
+#: places/FilterPane.qml:69
 msgid "Filter results"
 msgstr "Фільтрування результатів"
 
-#: shell/dash/FilterLoader.qml:38
+#: places/FilterLoader.qml:36
 #, qt-format
 msgid "Filter %1 active"
 msgstr "Задіяно фільтр %1"
 
-#: shell/dash/FilterLoader.qml:40
+#: places/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 inactive"
 msgstr "Не задіяно фільтр %1"
 
-#: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
+#: places/FilterLoader.qml:90
 msgid "All"
 msgstr "Всі"
 
-#: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
+#: places/SearchEntry.qml:176
 msgid "Search"
 msgstr "Шукати"
 
-#: shell/dash/CategoryHeader.qml:37
+#: places/CategoryHeader.qml:36
 msgid "not expanded"
 msgstr "не розгорнуто"
 
-#: shell/dash/CategoryHeader.qml:37
+#: places/CategoryHeader.qml:36
 msgid "expanded"
 msgstr "розгорнуто"
 
-#: shell/dash/CategoryHeader.qml:93
+#: places/CategoryHeader.qml:97
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
@@ -77,19 +77,19 @@ msgstr[0] "Переглянути ще %1 результат"
 msgstr[1] "Переглянути ще %1 результати"
 msgstr[2] "Переглянути ще %1 результатів"
 
-#: shell/dash/CategoryHeader.qml:95
+#: places/CategoryHeader.qml:99
 msgid "See fewer results"
 msgstr "Показати скорочений список"
 
-#: shell/dash/Home.qml:82
+#: places/Home.qml:80
 msgid "Shortcuts"
 msgstr "Скорочення"
 
-#: libunity-2d-private/src/launcherdevice.cpp:279
+#: libunity-2d-private/src/launcherdevice.cpp:273
 msgid "Eject"
-msgstr "Витягти"
+msgstr ""
 
-#: libunity-2d-private/src/launcherdevice.cpp:287
+#: libunity-2d-private/src/launcherdevice.cpp:281
 msgid "Safely remove"
 msgstr "Безпечно вилучити"
 
@@ -101,17 +101,15 @@ msgstr "Зафіксувати на панелі запуску"
 msgid "Unlock from Launcher"
 msgstr "Від’єднати від панелі запуску"
 
-#: libunity-2d-private/src/application.cpp:1007
+#: libunity-2d-private/src/launcherapplication.cpp:910
 msgid "Quit"
 msgstr "Вийти"
 
-#: libunity-2d-private/src/bfb.cpp:69
+#: libunity-2d-private/src/bfb.cpp:71
 msgid "Dash home"
 msgstr "Домівка панелі"
 
-#. TRANSLATORS: This refers to the direction of text
-#. (left-to-right or right-to-left): possible values are LTR or RTL
-#: libunity-2d-private/src/unity2dapplication.cpp:173
+#: libunity-2d-private/src/unity2dapplication.cpp:151
 msgid "QT_LAYOUT_DIRECTION"
 msgstr "LTR"
 
@@ -123,11 +121,11 @@ msgstr "Домівка"
 msgid "Home screen"
 msgstr "Екран домівки"
 
-#: libunity-2d-private/src/trash.cpp:134
+#: libunity-2d-private/src/trash.cpp:128
 msgid "Trash"
 msgstr "Смітник"
 
-#: libunity-2d-private/src/trash.cpp:214
+#: libunity-2d-private/src/trash.cpp:208
 #, c-format, qt-plural-format
 msgid "%n item in trash"
 msgid_plural "%n items in trash"
@@ -135,7 +133,7 @@ msgstr[0] "У смітнику %n об’єкт"
 msgstr[1] "У смітнику %n об’єкти"
 msgstr[2] "У смітнику %n об’єктів"
 
-#: libunity-2d-private/src/trash.cpp:221
+#: libunity-2d-private/src/trash.cpp:215
 msgid "Empty Trash"
 msgstr "Спорожнити смітник"
 
@@ -143,7 +141,7 @@ msgstr "Спорожнити смітник"
 msgid "Sorry, there is nothing that matches your search."
 msgstr "Вибачте, для вказаних вами ключових слів нічого не знайдено."
 
-#: libunity-2d-private/src/workspaces.cpp:79
+#: libunity-2d-private/src/workspaces.cpp:73
 msgid "Workspaces"
 msgstr "Робочі області"
 

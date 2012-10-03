@@ -15,17 +15,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2012-09-15 05:17+0000\n"
-"X-Generator: Launchpad (build 15944)\n"
+"X-Launchpad-Export-Date: 2012-10-03 05:40+0000\n"
+"X-Generator: Launchpad (build 16061)\n"
 
-#: shell/launcher/LauncherList.qml:90
+#: launcher/LauncherList.qml:82
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
 msgstr[0] "%1 dritare e hapur"
 msgstr[1] "%1 dritare të hapura"
 
-#: shell/launcher/LauncherList.qml:93
+#: launcher/LauncherList.qml:85
 msgid "not running"
 msgstr "Nuk është në funksionim"
 
@@ -37,56 +37,56 @@ msgstr "Shtyp Komandën Tënde"
 msgid "Error: HUD service not connected"
 msgstr "Gabim: Shërbimi HUD nuk është lidhur"
 
-#: shell/dash/FilterPane.qml:71
+#: places/FilterPane.qml:69
 msgid "Filter results"
 msgstr "Rezultatet e filtrit"
 
-#: shell/dash/FilterLoader.qml:38
+#: places/FilterLoader.qml:36
 #, qt-format
 msgid "Filter %1 active"
 msgstr "Filtri %1 aktiv"
 
-#: shell/dash/FilterLoader.qml:40
+#: places/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 inactive"
 msgstr "Filtri %1 joaktiv"
 
-#: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
+#: places/FilterLoader.qml:90
 msgid "All"
 msgstr "Gjithçka"
 
-#: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
+#: places/SearchEntry.qml:176
 msgid "Search"
 msgstr "Kërko"
 
-#: shell/dash/CategoryHeader.qml:37
+#: places/CategoryHeader.qml:36
 msgid "not expanded"
 msgstr "nuk është zgjeruar"
 
-#: shell/dash/CategoryHeader.qml:37
+#: places/CategoryHeader.qml:36
 msgid "expanded"
 msgstr "i zgjeruar"
 
-#: shell/dash/CategoryHeader.qml:93
+#: places/CategoryHeader.qml:97
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
 msgstr[0] "Shiko %1 rezultat më tepër"
 msgstr[1] "Shiko %1 rezultate më tepër"
 
-#: shell/dash/CategoryHeader.qml:95
+#: places/CategoryHeader.qml:99
 msgid "See fewer results"
 msgstr "Shiko më pak rezultate"
 
-#: shell/dash/Home.qml:82
+#: places/Home.qml:80
 msgid "Shortcuts"
 msgstr "Shkurtore"
 
-#: libunity-2d-private/src/launcherdevice.cpp:279
+#: libunity-2d-private/src/launcherdevice.cpp:273
 msgid "Eject"
 msgstr "Nxirre"
 
-#: libunity-2d-private/src/launcherdevice.cpp:287
+#: libunity-2d-private/src/launcherdevice.cpp:281
 msgid "Safely remove"
 msgstr "Hiqe në mënyrë të sigurtë"
 
@@ -98,17 +98,15 @@ msgstr "Bllokoje me Nisësin"
 msgid "Unlock from Launcher"
 msgstr "Zhbllokoje nga Nisësi"
 
-#: libunity-2d-private/src/application.cpp:1007
+#: libunity-2d-private/src/launcherapplication.cpp:910
 msgid "Quit"
 msgstr "Largohu"
 
-#: libunity-2d-private/src/bfb.cpp:69
+#: libunity-2d-private/src/bfb.cpp:71
 msgid "Dash home"
 msgstr ""
 
-#. TRANSLATORS: This refers to the direction of text
-#. (left-to-right or right-to-left): possible values are LTR or RTL
-#: libunity-2d-private/src/unity2dapplication.cpp:173
+#: libunity-2d-private/src/unity2dapplication.cpp:151
 msgid "QT_LAYOUT_DIRECTION"
 msgstr "QT_LAYOUT_DIRECTION"
 
@@ -120,18 +118,18 @@ msgstr "Shtëpia"
 msgid "Home screen"
 msgstr "Ekrani i shtëpisë"
 
-#: libunity-2d-private/src/trash.cpp:134
+#: libunity-2d-private/src/trash.cpp:128
 msgid "Trash"
 msgstr "Koshi"
 
-#: libunity-2d-private/src/trash.cpp:214
+#: libunity-2d-private/src/trash.cpp:208
 #, c-format, qt-plural-format
 msgid "%n item in trash"
 msgid_plural "%n items in trash"
 msgstr[0] "%n send në kosh"
 msgstr[1] "%n sende në kosh"
 
-#: libunity-2d-private/src/trash.cpp:221
+#: libunity-2d-private/src/trash.cpp:215
 msgid "Empty Trash"
 msgstr "Zbraze Koshin"
 
@@ -139,7 +137,7 @@ msgstr "Zbraze Koshin"
 msgid "Sorry, there is nothing that matches your search."
 msgstr "Më vjen keq, nuk ka asgjë që përputhet me kërkimin tuaj."
 
-#: libunity-2d-private/src/workspaces.cpp:79
+#: libunity-2d-private/src/workspaces.cpp:73
 msgid "Workspaces"
 msgstr "Hapësirat e Punës"
 
