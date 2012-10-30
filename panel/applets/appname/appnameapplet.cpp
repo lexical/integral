@@ -400,12 +400,6 @@ void AppNameApplet::mouseDoubleClickEvent(QMouseEvent* event) {
 
 void AppNameApplet::mousePressEvent(QMouseEvent* event) {
     if (event->button() == Qt::LeftButton) {
-        if (!d->m_label->geometry().contains(event->pos()) || !d->m_label->isVisible()) {
-            // Clicked outside the label and outside the menus
-            // focus the top most maximized window
-            d->m_windowHelper->focusTopMostMaximizedWindowOnScreen();
-        }
-
         d->m_dragStartPosition = event->pos();
         d->m_dragInProgress = true;
     } else {

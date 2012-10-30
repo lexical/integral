@@ -44,8 +44,6 @@ public:
     bool isMaximized() const;
     bool isMostlyOnScreen(int screen) const;
 
-    void focusTopMostMaximizedWindowOnScreen() const;
-
 public Q_SLOTS:
     void close();
     void minimize();

@@ -11,7 +11,6 @@ unity-2d (5.14.0-0ubuntu1) UNRELEASED; urgency=low
     - pips are not correctly updated when plugin in a second monitor (LP: #1003943)
     - [dash] Unable to maximize (LP: #918648)
     - all panels have same window focus on multiple monitors unity2d (LP: #930147)
-    - clicking on top panel should raise maximized windows (LP: #731761)
     - Dash will not open files under Greek folders (LP: #1002710)
     - Launcher does not respond to changes in icon theme (LP: #605475)
     - [panel] Invisible items in systray (LP: #703389)
