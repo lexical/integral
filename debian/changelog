@@ -1,7 +1,6 @@
 unity-2d (5.14.0-0ubuntu1) UNRELEASED; urgency=low
 
   * New upstream release:
-    - Translation template is not generated during the build (LP: #933468)
     - Unity 2D doesn't load 24 bit icons (LP: #977262)
     - [Launcher] [Multi-monitor] Removing a non running app tile from a launcher should remove it from all (LP: #988739)
     - Panel Titlebar double click is emitted for any mouse button (LP: #736491)
