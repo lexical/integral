@@ -1,14 +1,10 @@
 unity-2d (5.14.0-0ubuntu1) UNRELEASED; urgency=low
 
-  [ Francis Ginther ]
-  * Update build dependency to the renamed libgeis-dev (LP: #1046392)
-
-  [ Łukasz 'sil2100' Zemczak ]
   * New upstream release:
     - Translation template is not generated during the build (LP: #933468)
     - Unity 2D doesn't load 24 bit icons (LP: #977262)
     - [Launcher] [Multi-monitor] Removing a non running app tile from a launcher should remove it from all (LP: #988739)
-    - Panel Titlebar double click is emitted for any mouse button (LP: #73649)
+    - Panel Titlebar double click is emitted for any mouse button (LP: #736491)
     - Launcher does not hide if shown while dragging a file (LP: #1002308)
     - icon isn't reset when clearing the search query (LP: #973225)
     - Issue when ejecting busy device from the Unity 2D Shell (LP: #997786)
@@ -22,10 +18,9 @@ unity-2d (5.14.0-0ubuntu1) UNRELEASED; urgency=low
     - [panel] Invisible items in systray (LP: #703389)
     - [panel] Ignores "enabled" property on top-level menus (LP: #850017)
     - dropdown boxes on sites stop working (LP: #1010466)
-    - Update dependency on the renamed libgeis (LP: #1046392)
     - No image for dash icon (LP: #1056108)
 
- -- Francis Ginther <francis.ginther@canonical.com>  Tue, 04 Sep 2012 14:39:28 -0500
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Tue, 30 Oct 2012 09:59:49 +0100
 
 unity-2d (5.12.0-0ubuntu1.2) precise-updates; urgency=low
 
