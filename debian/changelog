@@ -18,8 +18,7 @@ unity-2d (5.14.0-0ubuntu1) UNRELEASED; urgency=low
     - Launcher does not respond to changes in icon theme (LP: #605475)
     - [panel] Invisible items in systray (LP: #703389)
     - [panel] Ignores "enabled" property on top-level menus (LP: #850017)
-    - dropdown boxes on sites stop working (LP: #1010466)
-    - No image for dash icon (LP: #1056108)
+  * Reverted some quantal-specific commits which are no longer relevant
 
  -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Tue, 30 Oct 2012 09:59:49 +0100
 
