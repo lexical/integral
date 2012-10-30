@@ -178,32 +178,6 @@ bool WindowHelper::isMostlyOnScreen(int screen) const
     return true;
 }
 
-void WindowHelper::focusTopMostMaximizedWindowOnScreen() const
-{
-    WnckWindow *topMostMaximizedWindowOnScreen = NULL;
-    GList *stack = wnck_screen_get_windows_stacked(wnck_screen_get_default());
-    GList *cur = stack;
-    while (cur) {
-        WnckWindow *window = (WnckWindow*) cur->data;
-
-        if (window != NULL) {
-            if (wnck_window_is_maximized(window)) {
-                // Check the window screen
-                int x, y, width, height;
-                wnck_window_get_geometry(window, &x, &y, &width, &height);
-                if (QApplication::desktop()->screenNumber(QRect(x, y, width, height).center()) == d->screen()) {
-                    topMostMaximizedWindowOnScreen = window;
-                }
-            }
-        }
-        cur = g_list_next(cur);
-    }
-
-    if (topMostMaximizedWindowOnScreen) {
-        wnck_window_activate(topMostMaximizedWindowOnScreen, CurrentTime);
-    }
-}
-
 void WindowHelper::close()
 {
     if (DashClient::instance()->activeInScreen(d->screen())) {
