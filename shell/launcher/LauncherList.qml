@@ -389,11 +389,11 @@ AutoScrollingListView {
 
         Connections {
             target: shellManager
-            onActiveWorkspaceChanged: updatePips()
+            onActiveWorkspaceChanged: if (!launcherItem.ListView.delayRemove) updatePips()
         }
         Connections {
             target: declarativeView.screen
-            onGeometryChanged: updatePips()
+            onGeometryChanged: if (!launcherItem.ListView.delayRemove) updatePips()
         }
         Component.onCompleted: updatePips()
     }
