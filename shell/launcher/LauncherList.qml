@@ -372,6 +372,8 @@ AutoScrollingListView {
         Connections {
             target: declarativeView
             onActivateShortcutPressed: {
+                if (launcherItem.ListView.delayRemove) return /* This method could be called after item deleted */
+
                 /* Only applications can be launched by keyboard shortcuts */
                 if (item.toString().indexOf("Application") == 0 && index == itemIndex) {
                     item.menu.hide()
@@ -379,6 +381,8 @@ AutoScrollingListView {
                 }
             }
             onNewInstanceShortcutPressed: {
+                if (launcherItem.ListView.delayRemove) return
+
                 /* Only applications can be launched by keyboard shortcuts */
                 if (item.toString().indexOf("Application") == 0 && index == itemIndex) {
                     item.menu.hide()
