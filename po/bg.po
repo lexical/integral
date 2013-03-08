@@ -8,30 +8,30 @@ msgstr ""
 "Project-Id-Version: unity-2d\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-04-10 10:59+0100\n"
-"PO-Revision-Date: 2012-03-08 15:58+0000\n"
+"PO-Revision-Date: 2013-03-07 18:20+0000\n"
 "Last-Translator: Svetoslav Stefanov <svetlisashkov@yahoo.com>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2013-01-30 04:52+0000\n"
-"X-Generator: Launchpad (build 16455)\n"
+"X-Launchpad-Export-Date: 2013-03-08 05:11+0000\n"
+"X-Generator: Launchpad (build 16523)\n"
 
 #: launcher/LauncherList.qml:82
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Отворен е %1 прозорец"
+msgstr[1] "Отворени са %1 прозореца"
 
 #: launcher/LauncherList.qml:85
 msgid "not running"
-msgstr ""
+msgstr "не се изпълнява"
 
 #: shell/hud/Hud.qml:211
 msgid "Type your Command"
-msgstr ""
+msgstr "Въведете вашата команда"
 
 #: shell/hud/Hud.qml:212
 msgid "Error: HUD service not connected"
@@ -39,40 +39,40 @@ msgstr ""
 
 #: places/FilterPane.qml:69
 msgid "Filter results"
-msgstr ""
+msgstr "Филтрирай резултатите"
 
 #: places/FilterLoader.qml:36
 #, qt-format
 msgid "Filter %1 active"
-msgstr ""
+msgstr "Задействан е филтъра %1"
 
 #: places/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 inactive"
-msgstr ""
+msgstr "Не е задействан филтъра %1"
 
 #: places/FilterLoader.qml:90
 msgid "All"
-msgstr ""
+msgstr "Всички"
 
 #: places/SearchEntry.qml:176
 msgid "Search"
-msgstr ""
+msgstr "Търсене"
 
 #: places/CategoryHeader.qml:36
 msgid "not expanded"
-msgstr ""
+msgstr "свито"
 
 #: places/CategoryHeader.qml:36
 msgid "expanded"
-msgstr ""
+msgstr "разгърнато"
 
 #: places/CategoryHeader.qml:97
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Виж още %1 резултат"
+msgstr[1] "Виж още %1 резултата"
 
 #: places/CategoryHeader.qml:99
 msgid "See fewer results"
@@ -88,7 +88,7 @@ msgstr "Изваждане"
 
 #: libunity-2d-private/src/launcherdevice.cpp:281
 msgid "Safely remove"
-msgstr ""
+msgstr "Безопасно отстраняване"
 
 #: libunity-2d-private/src/application.cpp:1000
 msgid "Lock to Launcher"
@@ -104,11 +104,11 @@ msgstr "Изход"
 
 #: libunity-2d-private/src/bfb.cpp:71
 msgid "Dash home"
-msgstr ""
+msgstr "Главно меню"
 
 #: libunity-2d-private/src/unity2dapplication.cpp:151
 msgid "QT_LAYOUT_DIRECTION"
-msgstr ""
+msgstr "LTR"
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home"
@@ -116,7 +116,7 @@ msgstr ""
 
 #: libunity-2d-private/src/lenses.cpp:45
 msgid "Home screen"
-msgstr ""
+msgstr "Домашен екран"
 
 #: libunity-2d-private/src/trash.cpp:128
 msgid "Trash"
@@ -143,7 +143,7 @@ msgstr "Работни плотове"
 
 #: panel/applets/appname/appnameapplet.cpp:368
 msgid "Ubuntu Desktop"
-msgstr ""
+msgstr "Убунту Десктоп"
 
 #~ msgid "Listen to Music"
 #~ msgstr "Слушане на Музика"
