@@ -27,20 +27,36 @@
 #include <X11/extensions/Xcomposite.h>
 #include <X11/extensions/shape.h>
 
+/* Do NOT activate the composite mode: this disables live windows previews,
+   as used in the spread and workspace switcher views
+*/
+#define DISABLE_COMPOSITE_MODE 0
+
 WindowImageProvider::WindowImageProvider() :
     QDeclarativeImageProvider(QDeclarativeImageProvider::Image), m_x11supportsShape(false)
 {
-    /* Always activate composite, so we can capture windows that are partially obscured
-       Ideally we want to activate it only when QX11Info::isCompositingManagerRunning()
-       is false, but in my experience it is not reliable at all.
-       The only downside when calling this is that there's a small visual glitch at the
-       moment when it's called on the entire desktop, and the same thing when the app
-       terminates. This happens regardless if the WM has activated composite already or
-       not.
-    */
-    activateComposite();
-
     int event_base, error_base;
+	m_x11supportsComposite = false;
+	m_activated = false;
+
+    if (XCompositeQueryExtension(QX11Info::display(), &event_base, &error_base)) {
+        int major = 0;
+        int minor = 2;
+        XCompositeQueryVersion(QX11Info::display(), &major, &minor);
+
+        if (major > 0 || minor >= 2) {
+            m_x11supportsComposite = true;
+            (UQ_DEBUG).nospace() << "Server supports the Composite extension (ver "
+                    << major << "." << minor << ")";
+        }
+        else {
+            (UQ_DEBUG).nospace() << "Server supports the Composite extension, but "
+                                  "version is < 0.2 (ver " << major << "." << minor << ")";
+        }
+    } else {
+        UQ_DEBUG << "Server doesn't support the Composite extension.";
+    }
+
     m_x11supportsShape = XShapeQueryExtension(QX11Info::display(),
                                               &event_base, &error_base);
 }
@@ -112,7 +128,13 @@ QImage WindowImageProvider::requestImage(const QString &id,
         frameId = QX11Info::appRootWindow();
     }
 
-    QImage image;
+	/* deferred composite activation, limited to particular windows
+	   (except for workspace spread which requires a root window image)
+	*/
+	if (m_x11supportsComposite && ! m_activated)
+		m_activated = activateComposite(frameId);
+
+   QImage image;
     QPixmap pixmap = getWindowPixmap(frameId, contentId);
     if (!pixmap.isNull()) {
         image = convertWindowPixmap(pixmap, frameId);
@@ -216,42 +238,47 @@ QImage WindowImageProvider::convertWindowPixmap(const QPixmap& windowPixmap,
     }
 }
 
-/*! Tries to ask the X Composite extension (if supported) to redirect all
-    windows on all screens to backing storage. This does not have
-    any effect if another application already requested the same
-    thing (typically the window manager does this).
+/* Activate composite, so we can capture windows that are partially obscured
+   Ideally we want to activate it only when QX11Info::isCompositingManagerRunning()
+   is false, but in my experience it is not reliable at all.
+   The only downside when calling this is that there's a small visual glitch at the
+   moment when it's called on the entire desktop, and the same thing when the app
+   terminates. This happens regardless if the WM has activated composite already or
+   not.
+
+   This updated version activates compositing selectively on individual windows
+   to optimize memory usage in the X server.
 */
-void WindowImageProvider::activateComposite()
+bool WindowImageProvider::activateComposite(Window windowId)
 {
-    int event_base;
-    int error_base;
-
+#ifdef DISABLE_COMPOSITE_MODE
+	return false;
+#endif
+	
     Display *display = QX11Info::display();
-    bool compositeSupport = false;
 
-    if (XCompositeQueryExtension(display, &event_base, &error_base)) {
-        int major = 0;
-        int minor = 2;
-        XCompositeQueryVersion(display, &major, &minor);
+	if (windowId != QX11Info::appRootWindow()) {
+		XCompositeRedirectSubwindows(display, windowId,
+									 CompositeRedirectAutomatic);
 
-        if (major > 0 || minor >= 2) {
-            compositeSupport = true;
-            (UQ_DEBUG).nospace() << "Server supports the Composite extension (ver "
-                    << major << "." << minor << ")";
-        }
-        else {
-            (UQ_DEBUG).nospace() << "Server supports the Composite extension, but "
-                                  "version is < 0.2 (ver " << major << "." << minor << ")";
-        }
-    } else {
-        UQ_DEBUG << "Server doesn't support the Composite extension.";
-    }
+		(UQ_DEBUG).nospace() << "WindowImageProvider: composite mode activated for window "
+							 << windowId;
 
-    if (compositeSupport) {
-        int screens = ScreenCount(display);
-        for (int i = 0; i < screens; ++i) {
-            XCompositeRedirectSubwindows(display, RootWindow(display, i),
-                                         CompositeRedirectAutomatic);
-        }
-    }
+		return true;
+	}
+
+	/* Ask the X Composite extension (if supported) to redirect all
+	   windows on all screens to backing storage. This does not have
+	   any effect if another application already requested the same
+	   thing (typically the window manager does this).
+	*/
+	int screens = ScreenCount(display);
+	for (int i = 0; i < screens; ++i) {
+		XCompositeRedirectSubwindows(display, RootWindow(display, i),
+									 CompositeRedirectAutomatic);
+	}
+	
+	(UQ_DEBUG).nospace() << "WindowImageProvider: composite mode activated for the whole desktop";
+
+	return true;
 }

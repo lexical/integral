@@ -29,13 +29,15 @@ public:
     WindowImageProvider();
     ~WindowImageProvider();
     virtual QImage requestImage(const QString &id, QSize *size, const QSize &requestedSize);
-    static void activateComposite();
+    static bool activateComposite(Window windowId);
 
 private:
     QPixmap getWindowPixmap(Window frameWindowId, Window contentWindowId);
     QImage convertWindowPixmap(const QPixmap& windowPixmap, Window frameWindowId);
 
     bool m_x11supportsShape;
+    bool m_x11supportsComposite;
+    bool m_activated;
 };
 
 #endif // X11WINDOWIMAGEPROVIDER_H
