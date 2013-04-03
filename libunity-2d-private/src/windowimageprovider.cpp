@@ -20,6 +20,7 @@
 #include <QImage>
 
 #include "windowimageprovider.h"
+#include "compositorhelper.h"
 #include <debug_p.h>
 
 #include <X11/Xlib.h>
@@ -27,38 +28,17 @@
 #include <X11/extensions/Xcomposite.h>
 #include <X11/extensions/shape.h>
 
-/* Do NOT activate the composite mode: this disables live windows previews,
-   as used in the spread and workspace switcher views
-*/
-#define DISABLE_COMPOSITE_MODE 0
+static CompositorHelper *compositorHelper = NULL;
 
 WindowImageProvider::WindowImageProvider() :
     QDeclarativeImageProvider(QDeclarativeImageProvider::Image), m_x11supportsShape(false)
 {
     int event_base, error_base;
-	m_x11supportsComposite = false;
-	m_activated = false;
-
-    if (XCompositeQueryExtension(QX11Info::display(), &event_base, &error_base)) {
-        int major = 0;
-        int minor = 2;
-        XCompositeQueryVersion(QX11Info::display(), &major, &minor);
-
-        if (major > 0 || minor >= 2) {
-            m_x11supportsComposite = true;
-            (UQ_DEBUG).nospace() << "Server supports the Composite extension (ver "
-                    << major << "." << minor << ")";
-        }
-        else {
-            (UQ_DEBUG).nospace() << "Server supports the Composite extension, but "
-                                  "version is < 0.2 (ver " << major << "." << minor << ")";
-        }
-    } else {
-        UQ_DEBUG << "Server doesn't support the Composite extension.";
-    }
 
     m_x11supportsShape = XShapeQueryExtension(QX11Info::display(),
                                               &event_base, &error_base);
+
+	compositorHelper = new CompositorHelper();
 }
 
 WindowImageProvider::~WindowImageProvider()
@@ -128,11 +108,13 @@ QImage WindowImageProvider::requestImage(const QString &id,
         frameId = QX11Info::appRootWindow();
     }
 
-	/* deferred composite activation, limited to particular windows
-	   (except for workspace spread which requires a root window image)
-	*/
-	if (m_x11supportsComposite && ! m_activated)
-		m_activated = activateComposite(frameId);
+    /* deferred composite activation, limited to particular windows
+       (except for workspace spread which requires a root window image)
+    */
+	if (compositorHelper->isSupported() && ! compositorHelper->isActive()) {
+		(UQ_DEBUG).nospace() << "compositor helper called";
+		compositorHelper->activateComposite(frameId);
+	}
 
    QImage image;
     QPixmap pixmap = getWindowPixmap(frameId, contentId);
@@ -236,49 +218,4 @@ QImage WindowImageProvider::convertWindowPixmap(const QPixmap& windowPixmap,
             return QImage();
         }
     }
-}
-
-/* Activate composite, so we can capture windows that are partially obscured
-   Ideally we want to activate it only when QX11Info::isCompositingManagerRunning()
-   is false, but in my experience it is not reliable at all.
-   The only downside when calling this is that there's a small visual glitch at the
-   moment when it's called on the entire desktop, and the same thing when the app
-   terminates. This happens regardless if the WM has activated composite already or
-   not.
-
-   This updated version activates compositing selectively on individual windows
-   to optimize memory usage in the X server.
-*/
-bool WindowImageProvider::activateComposite(Window windowId)
-{
-#ifdef DISABLE_COMPOSITE_MODE
-	return false;
-#endif
-	
-    Display *display = QX11Info::display();
-
-	if (windowId != QX11Info::appRootWindow()) {
-		XCompositeRedirectSubwindows(display, windowId,
-									 CompositeRedirectAutomatic);
-
-		(UQ_DEBUG).nospace() << "WindowImageProvider: composite mode activated for window "
-							 << windowId;
-
-		return true;
-	}
-
-	/* Ask the X Composite extension (if supported) to redirect all
-	   windows on all screens to backing storage. This does not have
-	   any effect if another application already requested the same
-	   thing (typically the window manager does this).
-	*/
-	int screens = ScreenCount(display);
-	for (int i = 0; i < screens; ++i) {
-		XCompositeRedirectSubwindows(display, RootWindow(display, i),
-									 CompositeRedirectAutomatic);
-	}
-	
-	(UQ_DEBUG).nospace() << "WindowImageProvider: composite mode activated for the whole desktop";
-
-	return true;
 }

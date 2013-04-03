@@ -36,8 +36,6 @@ private:
     QImage convertWindowPixmap(const QPixmap& windowPixmap, Window frameWindowId);
 
     bool m_x11supportsShape;
-    bool m_x11supportsComposite;
-    bool m_activated;
 };
 
 #endif // X11WINDOWIMAGEPROVIDER_H
