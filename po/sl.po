@@ -16,17 +16,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
-"X-Launchpad-Export-Date: 2013-01-30 04:52+0000\n"
-"X-Generator: Launchpad (build 16455)\n"
+"X-Launchpad-Export-Date: 2013-04-04 05:39+0000\n"
+"X-Generator: Launchpad (build 16546)\n"
 
-#: launcher/LauncherList.qml:82
+#: shell/launcher/LauncherList.qml:90
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
 msgstr[0] ""
 msgstr[1] ""
 
-#: launcher/LauncherList.qml:85
+#: shell/launcher/LauncherList.qml:93
 msgid "not running"
 msgstr ""
 
@@ -38,37 +38,37 @@ msgstr "Vnesite svoj ukaz"
 msgid "Error: HUD service not connected"
 msgstr "Napaka: storitev HUD ni povezana"
 
-#: places/FilterPane.qml:69
+#: shell/dash/FilterPane.qml:71
 msgid "Filter results"
 msgstr ""
 
-#: places/FilterLoader.qml:36
+#: shell/dash/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 active"
 msgstr ""
 
-#: places/FilterLoader.qml:38
+#: shell/dash/FilterLoader.qml:40
 #, qt-format
 msgid "Filter %1 inactive"
 msgstr ""
 
-#: places/FilterLoader.qml:90
+#: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
 msgid "All"
 msgstr ""
 
-#: places/SearchEntry.qml:176
+#: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
 msgid "Search"
 msgstr ""
 
-#: places/CategoryHeader.qml:36
+#: shell/dash/CategoryHeader.qml:37
 msgid "not expanded"
 msgstr ""
 
-#: places/CategoryHeader.qml:36
+#: shell/dash/CategoryHeader.qml:37
 msgid "expanded"
 msgstr ""
 
-#: places/CategoryHeader.qml:97
+#: shell/dash/CategoryHeader.qml:93
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
@@ -77,19 +77,19 @@ msgstr[1] "Ogled %1 dodatnega rezultata"
 msgstr[2] "Ogled %1 dodatnih rezultatov"
 msgstr[3] "Ogled %1 dodatnih rezultatov"
 
-#: places/CategoryHeader.qml:99
+#: shell/dash/CategoryHeader.qml:95
 msgid "See fewer results"
 msgstr "Oglejte si manj zadetkov"
 
-#: places/Home.qml:80
+#: shell/dash/Home.qml:82
 msgid "Shortcuts"
 msgstr "Bližnjice"
 
-#: libunity-2d-private/src/launcherdevice.cpp:273
+#: libunity-2d-private/src/launcherdevice.cpp:279
 msgid "Eject"
 msgstr "Izvrzi"
 
-#: libunity-2d-private/src/launcherdevice.cpp:281
+#: libunity-2d-private/src/launcherdevice.cpp:287
 msgid "Safely remove"
 msgstr ""
 
@@ -101,15 +101,17 @@ msgstr "Zakleni na zaganjalnik"
 msgid "Unlock from Launcher"
 msgstr "Odkleni z zaganjalnika"
 
-#: libunity-2d-private/src/launcherapplication.cpp:910
+#: libunity-2d-private/src/application.cpp:1007
 msgid "Quit"
 msgstr "Končaj"
 
-#: libunity-2d-private/src/bfb.cpp:71
+#: libunity-2d-private/src/bfb.cpp:69
 msgid "Dash home"
 msgstr ""
 
-#: libunity-2d-private/src/unity2dapplication.cpp:151
+#. TRANSLATORS: This refers to the direction of text
+#. (left-to-right or right-to-left): possible values are LTR or RTL
+#: libunity-2d-private/src/unity2dapplication.cpp:173
 msgid "QT_LAYOUT_DIRECTION"
 msgstr ""
 
@@ -121,11 +123,11 @@ msgstr "Domov"
 msgid "Home screen"
 msgstr "Domači zaslon"
 
-#: libunity-2d-private/src/trash.cpp:128
+#: libunity-2d-private/src/trash.cpp:134
 msgid "Trash"
 msgstr "Smeti"
 
-#: libunity-2d-private/src/trash.cpp:208
+#: libunity-2d-private/src/trash.cpp:214
 #, c-format, qt-plural-format
 msgid "%n item in trash"
 msgid_plural "%n items in trash"
@@ -134,7 +136,7 @@ msgstr[1] "%n predmet v smeteh"
 msgstr[2] "%n predmeta v smeteh"
 msgstr[3] "%n predmeti v smeteh"
 
-#: libunity-2d-private/src/trash.cpp:215
+#: libunity-2d-private/src/trash.cpp:221
 msgid "Empty Trash"
 msgstr "Izprazni smeti"
 
@@ -142,7 +144,7 @@ msgstr "Izprazni smeti"
 msgid "Sorry, there is nothing that matches your search."
 msgstr "Nič se ne ujema z vašim iskalnim nizom."
 
-#: libunity-2d-private/src/workspaces.cpp:73
+#: libunity-2d-private/src/workspaces.cpp:79
 msgid "Workspaces"
 msgstr "Delovne površine"
 

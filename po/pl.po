@@ -16,18 +16,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2013-01-30 04:52+0000\n"
-"X-Generator: Launchpad (build 16455)\n"
+"X-Launchpad-Export-Date: 2013-04-04 05:39+0000\n"
+"X-Generator: Launchpad (build 16546)\n"
 "Language: pl\n"
 
-#: launcher/LauncherList.qml:82
+#: shell/launcher/LauncherList.qml:90
 #, qt-format
 msgid "%1 window opened"
 msgid_plural "%1 windows opened"
 msgstr[0] ""
 msgstr[1] ""
 
-#: launcher/LauncherList.qml:85
+#: shell/launcher/LauncherList.qml:93
 msgid "not running"
 msgstr "nie uruchomiony"
 
@@ -39,56 +39,56 @@ msgstr "Wprowadzanie polecenia"
 msgid "Error: HUD service not connected"
 msgstr "Błąd: nie połączono z usługą HUD"
 
-#: places/FilterPane.qml:69
+#: shell/dash/FilterPane.qml:71
 msgid "Filter results"
 msgstr ""
 
-#: places/FilterLoader.qml:36
+#: shell/dash/FilterLoader.qml:38
 #, qt-format
 msgid "Filter %1 active"
 msgstr "Aktywny filtr %1"
 
-#: places/FilterLoader.qml:38
+#: shell/dash/FilterLoader.qml:40
 #, qt-format
 msgid "Filter %1 inactive"
 msgstr "Nieaktywny filtr %1"
 
-#: places/FilterLoader.qml:90
+#: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
 msgid "All"
 msgstr "Wszystko"
 
-#: places/SearchEntry.qml:176
+#: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
 msgid "Search"
 msgstr ""
 
-#: places/CategoryHeader.qml:36
+#: shell/dash/CategoryHeader.qml:37
 msgid "not expanded"
 msgstr "nie rozwinięty"
 
-#: places/CategoryHeader.qml:36
+#: shell/dash/CategoryHeader.qml:37
 msgid "expanded"
 msgstr "rozwinięty"
 
-#: places/CategoryHeader.qml:97
+#: shell/dash/CategoryHeader.qml:93
 #, qt-format
 msgid "See %1 more result"
 msgid_plural "See %1 more results"
 msgstr[0] ""
 msgstr[1] ""
 
-#: places/CategoryHeader.qml:99
+#: shell/dash/CategoryHeader.qml:95
 msgid "See fewer results"
 msgstr "Wyświetl mniej wyników"
 
-#: places/Home.qml:80
+#: shell/dash/Home.qml:82
 msgid "Shortcuts"
 msgstr "Skróty"
 
-#: libunity-2d-private/src/launcherdevice.cpp:273
+#: libunity-2d-private/src/launcherdevice.cpp:279
 msgid "Eject"
 msgstr "Wysuń"
 
-#: libunity-2d-private/src/launcherdevice.cpp:281
+#: libunity-2d-private/src/launcherdevice.cpp:287
 msgid "Safely remove"
 msgstr "Usuń bezpiecznie"
 
@@ -100,15 +100,17 @@ msgstr "Dodaj do panelu uruchamiania"
 msgid "Unlock from Launcher"
 msgstr "Usuń z panelu uruchamiania"
 
-#: libunity-2d-private/src/launcherapplication.cpp:910
+#: libunity-2d-private/src/application.cpp:1007
 msgid "Quit"
 msgstr "Zakończ"
 
-#: libunity-2d-private/src/bfb.cpp:71
+#: libunity-2d-private/src/bfb.cpp:69
 msgid "Dash home"
 msgstr ""
 
-#: libunity-2d-private/src/unity2dapplication.cpp:151
+#. TRANSLATORS: This refers to the direction of text
+#. (left-to-right or right-to-left): possible values are LTR or RTL
+#: libunity-2d-private/src/unity2dapplication.cpp:173
 msgid "QT_LAYOUT_DIRECTION"
 msgstr "LTR"
 
@@ -120,11 +122,11 @@ msgstr "Katalog domowy"
 msgid "Home screen"
 msgstr "Ekran główny"
 
-#: libunity-2d-private/src/trash.cpp:128
+#: libunity-2d-private/src/trash.cpp:134
 msgid "Trash"
 msgstr "Kosz"
 
-#: libunity-2d-private/src/trash.cpp:208
+#: libunity-2d-private/src/trash.cpp:214
 #, c-format, qt-plural-format
 msgid "%n item in trash"
 msgid_plural "%n items in trash"
@@ -132,7 +134,7 @@ msgstr[0] "%n element w koszu"
 msgstr[1] "%n elementy w koszu"
 msgstr[2] "%n elementów w koszu"
 
-#: libunity-2d-private/src/trash.cpp:215
+#: libunity-2d-private/src/trash.cpp:221
 msgid "Empty Trash"
 msgstr "Opróżnij kosz"
 
@@ -142,7 +144,7 @@ msgstr ""
 "Przepraszamy, nie odnaleziono żadnego elementu pasującego do wyszukiwanego "
 "wyrażenia."
 
-#: libunity-2d-private/src/workspaces.cpp:73
+#: libunity-2d-private/src/workspaces.cpp:79
 msgid "Workspaces"
 msgstr "Obszary robocze"
 
