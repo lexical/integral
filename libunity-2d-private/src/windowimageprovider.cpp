@@ -38,7 +38,7 @@ WindowImageProvider::WindowImageProvider() :
     m_x11supportsShape = XShapeQueryExtension(QX11Info::display(),
                                               &event_base, &error_base);
 
-	compositorHelper = new CompositorHelper();
+    compositorHelper = new CompositorHelper();
 }
 
 WindowImageProvider::~WindowImageProvider()
@@ -111,12 +111,12 @@ QImage WindowImageProvider::requestImage(const QString &id,
     /* deferred composite activation, limited to particular windows
        (except for workspace spread which requires a root window image)
     */
-	if (compositorHelper->isSupported() && ! compositorHelper->isActive()) {
-		(UQ_DEBUG).nospace() << "compositor helper called";
-		compositorHelper->activateComposite(frameId);
-	}
+    if (compositorHelper->isSupported() && ! compositorHelper->isActive()) {
+        (UQ_DEBUG).nospace() << "compositor helper called";
+        compositorHelper->activateComposite(frameId);
+    }
 
-   QImage image;
+    QImage image;
     QPixmap pixmap = getWindowPixmap(frameId, contentId);
     if (!pixmap.isNull()) {
         image = convertWindowPixmap(pixmap, frameId);

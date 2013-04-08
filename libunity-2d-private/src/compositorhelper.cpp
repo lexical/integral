@@ -44,11 +44,11 @@ CompositorHelper::CompositorHelper():
         if (major > 0 || minor >= 2) {
             m_x11supportsComposite = true;
             (UQ_DEBUG).nospace() << "Server supports the Composite extension (ver "
-                    << major << "." << minor << ")";
+                                 << major << "." << minor << ")";
         }
         else {
             (UQ_DEBUG).nospace() << "Server supports the Composite extension, but "
-                                  "version is < 0.2 (ver " << major << "." << minor << ")";
+                "version is < 0.2 (ver " << major << "." << minor << ")";
         }
     } else {
         UQ_DEBUG << "Server doesn't support the Composite extension.";
