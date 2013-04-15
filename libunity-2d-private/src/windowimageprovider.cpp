@@ -20,15 +20,12 @@
 #include <QImage>
 
 #include "windowimageprovider.h"
-#include "compositorhelper.h"
 #include <debug_p.h>
 
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #include <X11/extensions/Xcomposite.h>
 #include <X11/extensions/shape.h>
-
-static CompositorHelper *compositorHelper = NULL;
 
 WindowImageProvider::WindowImageProvider() :
     QDeclarativeImageProvider(QDeclarativeImageProvider::Image), m_x11supportsShape(false)
@@ -37,8 +34,6 @@ WindowImageProvider::WindowImageProvider() :
 
     m_x11supportsShape = XShapeQueryExtension(QX11Info::display(),
                                               &event_base, &error_base);
-
-    compositorHelper = new CompositorHelper();
 }
 
 WindowImageProvider::~WindowImageProvider()
@@ -106,14 +101,6 @@ QImage WindowImageProvider::requestImage(const QString &id,
     /* Use form image://window/root to specify you want an image of the root window */
     if (atPos == -1 && windowIds == "root") {
         frameId = QX11Info::appRootWindow();
-    }
-
-    /* deferred composite activation, limited to particular windows
-       (except for workspace spread which requires a root window image)
-    */
-    if (compositorHelper->isSupported() && ! compositorHelper->isActive()) {
-        (UQ_DEBUG).nospace() << "compositor helper called";
-        compositorHelper->activateComposite(frameId);
     }
 
     QImage image;

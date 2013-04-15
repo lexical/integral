@@ -24,10 +24,6 @@
 #include <X11/Xatom.h>
 #include <X11/extensions/Xcomposite.h>
 
-/* Do NOT activate the composite mode: this disables live windows previews,
-   as used in the spread and workspace switcher views
-*/
-#define DISABLE_COMPOSITE_MODE 0
 
 CompositorHelper::CompositorHelper():
 	QObject(),
@@ -55,6 +51,13 @@ CompositorHelper::CompositorHelper():
     }
 }
 
+CompositorHelper* CompositorHelper::instance()
+{
+    static CompositorHelper* singleton = new CompositorHelper();
+
+    return singleton;
+}
+
 /* Activate composite, so we can capture windows that are partially obscured
    Ideally we want to activate it only when QX11Info::isCompositingManagerRunning()
    is false, but in my experience it is not reliable at all.
@@ -66,70 +69,38 @@ CompositorHelper::CompositorHelper():
    This updated version activates compositing selectively on individual windows
    to optimize memory usage in the X server.
 */
-void CompositorHelper::activateComposite(Window windowId)
+void CompositorHelper::activateComposite()
 {
-#if DISABLE_COMPOSITE_MODE
-    return;
-#endif
-	
     Display *display = QX11Info::display();
 
-	if (windowId != QX11Info::appRootWindow()) {
-		/* the parent is most probably the root window */
-		windowId = QX11Info::appRootWindow();
-		XCompositeRedirectSubwindows(display, windowId,
-									 CompositeRedirectAutomatic);
-
-		(UQ_DEBUG).nospace() << "composite mode activated for window "
-							 << QString("0x%1").arg(windowId, 0, 16);
-	} else {
-
-		/* Ask the X Composite extension (if supported) to redirect all
-		   windows on all screens to backing storage. This does not have
-		   any effect if another application already requested the same
-		   thing (typically the window manager does this).
-		*/
-		int screens = ScreenCount(display);
-		for (int i = 0; i < screens; ++i) {
-			XCompositeRedirectSubwindows(display, RootWindow(display, i),
-										 CompositeRedirectAutomatic);
-		}
+    /* Ask the X Composite extension (if supported) to redirect all
+       windows on all screens to backing storage. This does not have
+       any effect if another application already requested the same
+       thing (typically the window manager does this).
+    */
+    int screens = ScreenCount(display);
+    for (int i = 0; i < screens; ++i) {
+        XCompositeRedirectSubwindows(display, RootWindow(display, i),
+                                     CompositeRedirectAutomatic);
+    }
 	
-		(UQ_DEBUG).nospace() << "composite mode activated for the whole desktop";
-	}
+    (UQ_DEBUG).nospace() << "composite mode activated";
 
 	m_compositeActivated = true;
-
-	// TODO: program timeout
-	QTimer::singleShot(5000, this, SLOT(timeout()));
 }
 
-void CompositorHelper::deactivateComposite(Window windowId)
+void CompositorHelper::deactivateComposite()
 {
     Display *display = QX11Info::display();
 
-	if (windowId != QX11Info::appRootWindow()) {
-		/* the parent is most probably the root window */
-		windowId = QX11Info::appRootWindow();
-		XCompositeUnredirectSubwindows(display, windowId,
-									   CompositeRedirectAutomatic);
-		(UQ_DEBUG).nospace() << "composite mode deactivated for window "
-							 << QString("0x%1").arg(windowId, 0, 16);
-	} else {
-		int screens = ScreenCount(display);
-		for (int i = 0; i < screens; ++i) {
-			XCompositeUnredirectSubwindows(display, RootWindow(display, i),
-										   CompositeRedirectAutomatic);
-		}
-		(UQ_DEBUG).nospace() << "composite mode deactivated for the whole desktop";
-	}
+    int screens = ScreenCount(display);
+    for (int i = 0; i < screens; ++i) {
+        XCompositeUnredirectSubwindows(display, RootWindow(display, i),
+                                       CompositeRedirectAutomatic);
+    }
+    (UQ_DEBUG).nospace() << "composite mode deactivated";
 
 	m_compositeActivated = false;
-}
-
-void CompositorHelper::timeout()
-{
-	deactivateComposite(QX11Info::appRootWindow());
 }
 
 

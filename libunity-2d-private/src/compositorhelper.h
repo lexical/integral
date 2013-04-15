@@ -25,19 +25,19 @@ class CompositorHelper : public QObject
 {
 	Q_OBJECT
 public:
-    CompositorHelper();
-    void activateComposite(Window windowId);
-	void deactivateComposite(Window windowId);
+    static CompositorHelper* instance();
 
-	bool isSupported() { return m_x11supportsComposite; }
-	bool isActive() { return m_compositeActivated; }
+    void activateComposite();
+	void deactivateComposite();
+
+	bool isCompositeSupported() { return m_x11supportsComposite; }
+	bool isCompositeActive() { return m_compositeActivated; }
 
 private:
+    explicit CompositorHelper();
+
 	bool m_x11supportsComposite;
 	bool m_compositeActivated;
-
-private Q_SLOTS:
-	void timeout();
 };
 
 #endif // X11COMPOSITORHELPER_H
