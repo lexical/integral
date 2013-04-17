@@ -86,7 +86,7 @@ void CompositorHelper::activateComposite()
 	
     (UQ_DEBUG).nospace() << "composite mode activated";
 
-	m_compositeActivated = true;
+    m_compositeActivated = true;
 }
 
 void CompositorHelper::deactivateComposite()
@@ -100,7 +100,7 @@ void CompositorHelper::deactivateComposite()
     }
     (UQ_DEBUG).nospace() << "composite mode deactivated";
 
-	m_compositeActivated = false;
+    m_compositeActivated = false;
 }
 
 
