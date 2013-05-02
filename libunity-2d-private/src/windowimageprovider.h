@@ -29,7 +29,6 @@ public:
     WindowImageProvider();
     ~WindowImageProvider();
     virtual QImage requestImage(const QString &id, QSize *size, const QSize &requestedSize);
-    static bool activateComposite(Window windowId);
 
 private:
     QPixmap getWindowPixmap(Window frameWindowId, Window contentWindowId);

@@ -28,16 +28,16 @@ public:
     static CompositorHelper* instance();
 
     void activateComposite();
-	void deactivateComposite();
+    void deactivateComposite();
 
-	bool isCompositeSupported() { return m_x11supportsComposite; }
-	bool isCompositeActive() { return m_compositeActivated; }
+    bool isCompositeSupported() { return m_x11supportsComposite; }
+    bool isCompositeActive() { return m_compositeActivated; }
 
 private:
     explicit CompositorHelper();
 
-	bool m_x11supportsComposite;
-	bool m_compositeActivated;
+    bool m_x11supportsComposite;
+    bool m_compositeActivated;
 };
 
 #endif // X11COMPOSITORHELPER_H

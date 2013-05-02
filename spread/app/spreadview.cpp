@@ -75,9 +75,3 @@ void SpreadView::unloadPreviews()
         CompositorHelper::instance()->deactivateComposite();
     }
 }
-
-bool SpreadView::previewsAvailable() const
-{
-    return (CompositorHelper::instance()->isCompositeSupported()
-            && CompositorHelper::instance()->isCompositeActive());
-}

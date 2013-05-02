@@ -29,12 +29,8 @@ class SpreadView : public Unity2DDeclarativeView
 {
     Q_OBJECT
 
-    Q_PROPERTY(bool previewsAvailable READ previewsAvailable)
-
 public:
     explicit SpreadView(int screen);
-
-    bool previewsAvailable() const;
 
 public Q_SLOTS:
     void fitToAvailableSpace();

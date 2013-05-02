@@ -15,7 +15,6 @@
  */
 
 #include <QX11Info>
-#include <QTimer>
 
 #include "compositorhelper.h"
 #include <debug_p.h>
