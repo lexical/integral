@@ -114,4 +114,13 @@
       </description>
     </key>
   </schema>
+  <schema path="/com/canonical/unity-2d/spread/" id="com.canonical.Unity2d.Spread" gettext-domain="unity-2d">
+    <key type="b" name="jit-composite">
+      <default>false</default>
+      <summary>Use window compositing only when needed</summary>
+      <description>
+        If this option is enabled, Unity will not force all window surfaces to be redirected permanently, but only when window previews are to requested by the Spread feature. This option saves memory in the X server and helps optimizing the rendering pipeline on low-end systems.
+      </description>
+    </key>
+  </schema>
 </schemalist>

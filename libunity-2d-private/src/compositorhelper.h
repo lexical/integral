@@ -1,8 +1,5 @@
 /*
- * Copyright (C) 2010 Canonical, Ltd.
- *
- * Authors:
- *  Ugo Riboni <ugo.riboni@canonical.com>
+ * Copyright (C) 2013 Canonical, Ltd.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,28 +14,30 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SPREADVIEW_H
-#define SPREADVIEW_H
+#ifndef X11COMPOSITORHELPER_H
+#define X11COMPOSITORHELPER_H
 
-#include <QDeclarativeView>
-#include <QEvent>
+#include <QObject>
 
-#include <unity2ddeclarativeview.h>
+typedef unsigned long Window;
 
-class SpreadView : public Unity2DDeclarativeView
+class CompositorHelper : public QObject
 {
-    Q_OBJECT
-
+	Q_OBJECT
 public:
-    explicit SpreadView(int screen);
+    static CompositorHelper* instance();
 
-public Q_SLOTS:
-    void fitToAvailableSpace();
+    void activateComposite();
+    void deactivateComposite();
 
-    void preparePreviews();
-    void unloadPreviews();
+    bool isCompositeSupported() { return m_x11supportsComposite; }
+    bool isCompositeActive() { return m_compositeActivated; }
+
+private:
+    explicit CompositorHelper();
+
+    bool m_x11supportsComposite;
+    bool m_compositeActivated;
 };
 
-Q_DECLARE_METATYPE(SpreadView*)
-
-#endif // SPREADVIEW_H
+#endif // X11COMPOSITORHELPER_H

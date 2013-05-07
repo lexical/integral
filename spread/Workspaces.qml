@@ -218,6 +218,7 @@ Rectangle {
     function show() {
         allWindows.load()
 
+        declarativeView.preparePreviews()
         declarativeView.show()
         workspaces.currentIndex = desktop.workspaces.current
         /* This is necessary otherwise we don't get keypresses until the user does a
@@ -244,6 +245,7 @@ Rectangle {
                for the trick I use to force them to refresh and more info on this cache)
             */
             allWindows.unload()
+            declarativeView.unloadPreviews()
             zoomedWorkspace = -1
         }
     }

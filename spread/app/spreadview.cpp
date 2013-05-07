@@ -25,12 +25,20 @@
 #include <QDeclarativeItem>
 
 #include "screeninfo.h"
+#include "config.h"
+#include "compositorhelper.h"
 
 SpreadView::SpreadView(int screen)
 : Unity2DDeclarativeView()
 {
     m_screenInfo = new ScreenInfo(screen, this);
     connect(m_screenInfo, SIGNAL(panelsFreeGeometryChanged(QRect)), SLOT(fitToAvailableSpace()));
+
+    bool jitComposite = spread2dConfiguration().property("jit-composite").toBool();
+    if (CompositorHelper::instance()->isCompositeSupported()
+        && ! jitComposite) {
+        CompositorHelper::instance()->activateComposite();
+    }
 }
 
 void SpreadView::fitToAvailableSpace()
@@ -43,4 +51,27 @@ void SpreadView::fitToAvailableSpace()
     rootObject()->setWidth(width);
     rootObject()->setHeight(height);
     setSceneRect(QRectF(0, 0, width, height));
+}
+
+void SpreadView::preparePreviews()
+{
+    /* deferred activation of window compositing to preserve
+       server side memory usage (important on low-end ARM systems)
+    */
+    if (CompositorHelper::instance()->isCompositeSupported()
+        && ! CompositorHelper::instance()->isCompositeActive()) {
+        CompositorHelper::instance()->activateComposite();
+    }
+
+}
+
+void SpreadView::unloadPreviews()
+{
+    bool jitComposite = spread2dConfiguration().property("jit-composite").toBool();
+
+    if (CompositorHelper::instance()->isCompositeSupported()
+        && CompositorHelper::instance()->isCompositeActive()
+        && jitComposite) {
+        CompositorHelper::instance()->deactivateComposite();
+    }
 }

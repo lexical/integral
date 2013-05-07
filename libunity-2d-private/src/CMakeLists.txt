@@ -26,6 +26,7 @@ set(lib${LIB_NAME}_SRCS
     giodefaultapplication.cpp
     qsortfilterproxymodelqml.cpp
     blendedimageprovider.cpp
+    compositorhelper.cpp
     windowimageprovider.cpp
     windowinfo.cpp
     windowslist.cpp
